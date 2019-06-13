@@ -1,0 +1,40 @@
+package com.ipartek.formacion.uf2216.ejemplos;
+
+public class Lenguaje {
+
+	//Lenguaje.main()
+	/**
+	 * Método que se llama al iniciar la aplicación
+	 * @param args Argumentos de entrada de consola
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hola");
+		
+		// Tipos primitivos
+		// ----------------
+		// ENTEROS CON SIGNO
+		// byte   8
+		// short 16
+		// int   32
+		// long  64
+		// 2^(n-1) a 2^(n-1) - 1 (complemento a dos)
+		
+		// COMA FLOTANTE
+		// float   32
+		// double  64
+		
+		// boolean 16 true o false
+		// char    16 Unicode 'a'
+		
+		int i1, i2 = 3, i3;
+		
+		// Resto de tipos
+		
+		String s1 = new String("Javi");
+		String s2 = new String("Javi");
+		
+		System.out.println("¿Son la misma? " + s1 == s2);
+		System.out.println("¿Son iguales? " + s1.equals(s2));
+	}
+}
