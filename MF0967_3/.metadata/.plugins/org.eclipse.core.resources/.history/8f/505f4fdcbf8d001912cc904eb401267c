@@ -1,0 +1,11 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+public class PuntoPrueba {
+	public static void main(String[]args) {
+		Punto pt1;
+		
+		pt1 = new Punto();
+		
+		System.out.println(pt1);
+	}
+}

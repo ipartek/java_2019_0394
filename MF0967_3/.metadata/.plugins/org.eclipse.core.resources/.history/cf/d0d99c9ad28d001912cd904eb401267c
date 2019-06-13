@@ -1,0 +1,16 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Poligono {
+	private ArrayList<Punto> puntos = new ArrayList<Punto>();
+
+	public Iterable<Punto> getPuntos() {
+		return puntos;
+	}
+	
+	public void add(Punto p) {
+		puntos.add(p);
+	}
+}
