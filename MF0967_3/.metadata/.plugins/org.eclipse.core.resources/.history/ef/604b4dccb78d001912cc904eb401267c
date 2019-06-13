@@ -264,28 +264,9 @@ public class Lenguaje {
 			System.out.println(valor);
 		}
 		
-		String linea;
-		
 		for(Entry<String, String> par: diccionario.entrySet()) {
-			linea = String.format("(%s, %s)", par.getKey(), par.getValue());
-			System.out.println(linea);
+			System.out.println(par.getKey());
+			System.out.println(par.getValue());
 		}
-		
-		// Conversiones
-		
-		String sNumero = "5";
-		int iNumero = Integer.parseInt(sNumero);
-		
-		System.out.println(iNumero);
-		
-		String texto = String.valueOf(iNumero);
-		
-		System.out.println(texto);
-		
-		java.util.Date fecha = new java.util.Date();
-		
-		texto = fecha.toString();
-		
-		System.out.println(texto);
 	}
 }

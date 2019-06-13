@@ -1,8 +1,6 @@
 package com.ipartek.formacion.uf2216.ejemplos;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class Lenguaje {
 
@@ -247,45 +245,5 @@ public class Lenguaje {
 		String fichero = "C:\\nuevos\\trabajos";
 		
 		System.out.println(fichero);
-		
-		// Diccionario
-		HashMap<String, String> diccionario = new HashMap<String, String>();
-		
-		diccionario.put("casa", "home");
-		diccionario.put("coche", "car");
-		
-		System.out.println(diccionario.get("coche"));
-		
-		for(String clave: diccionario.keySet()) {
-			System.out.println(clave);
-		}
-		
-		for(String valor: diccionario.values()) {
-			System.out.println(valor);
-		}
-		
-		String linea;
-		
-		for(Entry<String, String> par: diccionario.entrySet()) {
-			linea = String.format("(%s, %s)", par.getKey(), par.getValue());
-			System.out.println(linea);
-		}
-		
-		// Conversiones
-		
-		String sNumero = "5";
-		int iNumero = Integer.parseInt(sNumero);
-		
-		System.out.println(iNumero);
-		
-		String texto = String.valueOf(iNumero);
-		
-		System.out.println(texto);
-		
-		java.util.Date fecha = new java.util.Date();
-		
-		texto = fecha.toString();
-		
-		System.out.println(texto);
 	}
 }

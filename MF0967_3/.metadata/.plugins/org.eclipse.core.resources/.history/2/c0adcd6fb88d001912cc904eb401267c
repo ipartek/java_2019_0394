@@ -277,15 +277,5 @@ public class Lenguaje {
 		int iNumero = Integer.parseInt(sNumero);
 		
 		System.out.println(iNumero);
-		
-		String texto = String.valueOf(iNumero);
-		
-		System.out.println(texto);
-		
-		java.util.Date fecha = new java.util.Date();
-		
-		texto = fecha.toString();
-		
-		System.out.println(texto);
 	}
 }

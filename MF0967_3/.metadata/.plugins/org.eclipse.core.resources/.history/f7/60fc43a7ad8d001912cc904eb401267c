@@ -1,8 +1,6 @@
 package com.ipartek.formacion.uf2216.ejemplos;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class Lenguaje {
 
@@ -195,97 +193,13 @@ public class Lenguaje {
 		// switch soporta Enteros y char
 		// Java5 soporta además String en switch
 		
-		String opcion = "uno";
+		String opcion = "tres";
 		
 		switch(opcion) {
-		case "uno": System.out.println(1); break;
-		case "dos": System.out.println(2); break;
-		case "tres": System.out.println(3); break;
+		case "uno": System.out.println(1);
+		case "dos": System.out.println(2);
+		case "tres": System.out.println(3);
 		}
-		
-		int mes = 5, dias;
-		switch(mes) {
-		case 2: dias = 28; break;
-		case 4:
-		case 6:
-		case 9:
-		case 11: dias = 30; break;
-		default: dias = 31;
-		}
-		
-		x = 1;
-		while(x <= 10) {
-			System.out.println(x);
-			x++;
-		}
-		
-		x = 1;
-		do {
-			System.out.println(x++);
-		} while(x <= 10);
-		
-		for(x = 1; x <= 10; x++) {
-			System.out.println(x);
-		}
-		
-//		for(;;) {
-//			System.out.println("INFINITO");
-//		}
-		
-		// Java5
-		int[] enteros = { 5, 2, 5, 78, 9, 7, 5, 3 };
-		
-		for(int entero: enteros) {
-			System.out.println(entero);
-		}
-		
-		for(int i = 0; i < enteros.length; i++) {
-			System.out.println(enteros[i]);
-		}
-		
-		//Cuidado con los String
-		String fichero = "C:\\nuevos\\trabajos";
-		
-		System.out.println(fichero);
-		
-		// Diccionario
-		HashMap<String, String> diccionario = new HashMap<String, String>();
-		
-		diccionario.put("casa", "home");
-		diccionario.put("coche", "car");
-		
-		System.out.println(diccionario.get("coche"));
-		
-		for(String clave: diccionario.keySet()) {
-			System.out.println(clave);
-		}
-		
-		for(String valor: diccionario.values()) {
-			System.out.println(valor);
-		}
-		
-		String linea;
-		
-		for(Entry<String, String> par: diccionario.entrySet()) {
-			linea = String.format("(%s, %s)", par.getKey(), par.getValue());
-			System.out.println(linea);
-		}
-		
-		// Conversiones
-		
-		String sNumero = "5";
-		int iNumero = Integer.parseInt(sNumero);
-		
-		System.out.println(iNumero);
-		
-		String texto = String.valueOf(iNumero);
-		
-		System.out.println(texto);
-		
-		java.util.Date fecha = new java.util.Date();
-		
-		texto = fecha.toString();
-		
-		System.out.println(texto);
+
 	}
 }
