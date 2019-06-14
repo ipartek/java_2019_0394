@@ -1,9 +1,11 @@
 package com.ipartek.formacion.uf2216.ejemplos.poo;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Poligono {
 	private HashSet<Punto> puntos = new HashSet<Punto>();
+	private HashMap<Punto> puntoss;
 
 	public Iterable<Punto> getPuntos() {
 		return puntos;

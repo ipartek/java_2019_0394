@@ -8,9 +8,11 @@ public class PoligonoPrueba {
 		poligono.add(new Punto(1,2));
 		poligono.add(new Punto(3,4));
 		
-		Iterable<Punto> puntos = poligono.getPuntos(); 
+		Punto[] array = poligono.getPuntosClonados(); 
+		array[0] = new Punto(11,12);
+		array[1].setX(10);
 		
-		for(Punto punto: puntos) {
+		for(Punto punto: array) {
 			System.out.println(punto.toString());
 		}
 		
