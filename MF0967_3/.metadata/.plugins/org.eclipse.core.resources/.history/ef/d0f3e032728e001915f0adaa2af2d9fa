@@ -1,0 +1,18 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+public class PuntoNombrePrueba {
+	public static void main(String[] args) {
+		PuntoNombre ptn;
+		ptn = new PuntoNombre("Bilbao");
+		
+		System.out.println(ptn.getXY());
+		
+		ptn.setXY(3, 4);
+		
+		System.out.println(ptn.getString(false));
+		
+		Poligono poligono = new Poligono();
+		
+		poligono.add(ptn);
+	}
+}

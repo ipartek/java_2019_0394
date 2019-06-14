@@ -11,6 +11,7 @@ public class Lenguaje {
 	 * Método que se llama al iniciar la aplicación
 	 * @param args Argumentos de entrada de consola
 	 */
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		System.out.println("Hola");
 		

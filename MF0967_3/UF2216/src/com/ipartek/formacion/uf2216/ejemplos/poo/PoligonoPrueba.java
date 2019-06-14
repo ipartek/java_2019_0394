@@ -13,11 +13,11 @@ public class PoligonoPrueba {
 		array[1].setX(10);
 		
 		for(Punto punto: array) {
-			System.out.println(punto.getXY());
+			System.out.println(punto.toString());
 		}
 		
 		for(Punto punto: poligono.getPuntosClonados()) {
-			System.out.println(punto.getXY());
+			System.out.println(punto.toString());
 		}
 	}
 
