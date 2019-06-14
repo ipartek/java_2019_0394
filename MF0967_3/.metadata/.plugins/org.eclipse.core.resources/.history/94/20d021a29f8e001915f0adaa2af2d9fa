@@ -1,0 +1,16 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+import java.util.ArrayList;
+
+public class LambdaPrueba {
+
+	public LambdaPrueba() {
+		ArrayList<String> al = new ArrayList<String>();
+		
+		al.add("Uno");
+		al.add("Dos");
+		
+		System.out.println(al.stream().filter( (dato) -> dato.contains("D") ));
+	}
+
+}
