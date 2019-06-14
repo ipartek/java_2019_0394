@@ -8,11 +8,7 @@ public class PuntoPrueba {
 		
 		pt1 = new Punto();
 		
-		try {
-			pt1.setX(-400); pt1.setY(7);
-		} catch (PooException e) {
-			System.out.println(e.getMessage());
-		}
+		pt1.setX(-40); pt1.setY(7);
 		
 		System.out.println(pt1);
 		System.out.println(pt1.getX());

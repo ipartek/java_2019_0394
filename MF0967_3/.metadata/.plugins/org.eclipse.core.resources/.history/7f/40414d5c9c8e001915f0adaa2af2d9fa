@@ -36,9 +36,9 @@ public class Punto { // extends Object
 		return x;
 	}
 
-	public void setX(int x) {
+	public void setX(int x) throws Exception {
 		if(x > MAXIMO_X || x < MINIMO_X) {
-			throw new PooException("No se admite el valor " + x);
+			throw new Exception("No se admite el valor " + x);
 		}
 		
 		this.x = x;
