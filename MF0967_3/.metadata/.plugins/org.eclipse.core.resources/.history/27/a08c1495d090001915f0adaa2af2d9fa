@@ -197,7 +197,6 @@ public class Lenguaje {
 		
 		String opcion = "uno";
 		
-		// Java7
 		switch(opcion) {
 		case "uno": System.out.println(1); break;
 		case "dos": System.out.println(2); break;

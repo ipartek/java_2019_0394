@@ -10,7 +10,6 @@ public class LambdaPrueba {
 		al.add("Uno");
 		al.add("Dos");
 
-		// Lambda: Java8
 		for(Object dato: al.stream().filter((dato) -> dato.contains("U")).toArray()){
 			System.out.println(dato);
 		}
