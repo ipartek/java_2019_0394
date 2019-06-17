@@ -1,0 +1,18 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+public class EjemploRecursividad {
+
+	public static void main(String[] args) {
+//		Vuelta de marcador
+//		long l = Long.MAX_VALUE;
+//		System.out.println(l);
+//		System.out.println(++l);
+		
+		System.out.println(factorial(5));
+	}
+	
+	public static long factorial(long numero) {
+		return numero * factorial(numero-1);
+	}
+
+}
