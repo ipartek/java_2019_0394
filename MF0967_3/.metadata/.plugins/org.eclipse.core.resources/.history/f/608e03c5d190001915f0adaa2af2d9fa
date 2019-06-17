@@ -9,14 +9,6 @@ public class InterfacePrueba {
 		rodables[1] = new Balon();
 		
 		for(Rodable rodable: rodables) {
-			if(rodable instanceof Comestible) {
-				((Comestible)rodable).comer();
-			}
-			
-			if(rodable instanceof Balon) {
-				System.out.println("El siguiente va a ser un balón");
-			}
-			
 			rodable.rodar();
 		}
 	}

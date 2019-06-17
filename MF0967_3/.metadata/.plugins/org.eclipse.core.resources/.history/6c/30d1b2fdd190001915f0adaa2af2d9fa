@@ -12,11 +12,6 @@ public class InterfacePrueba {
 			if(rodable instanceof Comestible) {
 				((Comestible)rodable).comer();
 			}
-			
-			if(rodable instanceof Balon) {
-				System.out.println("El siguiente va a ser un balón");
-			}
-			
 			rodable.rodar();
 		}
 	}
