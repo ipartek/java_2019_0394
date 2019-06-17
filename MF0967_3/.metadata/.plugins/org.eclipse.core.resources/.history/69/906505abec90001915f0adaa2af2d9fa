@@ -1,0 +1,16 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+import java.io.IOException;
+
+public class EjemploConsola {
+
+	public static void main(String[] args) throws IOException {
+		System.out.print("Dime tu nombre: ");
+		
+		int i = System.in.read();
+		
+		System.out.println(i);
+		
+	}
+
+}

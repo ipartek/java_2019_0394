@@ -1,0 +1,11 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+public class EjemploConsola {
+
+	public static void main(String[] args) {
+		System.out.print("Dime tu nombre: ");
+		
+		
+	}
+
+}
