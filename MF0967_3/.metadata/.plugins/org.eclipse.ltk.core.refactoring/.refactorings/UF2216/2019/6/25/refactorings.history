@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;resultado&apos; from expression &apos;euros.divide(new BigDecimal(3.4),new MathContext(32000))&apos;&#x0D;&#x0A;- Original project: &apos;UF2216&apos;&#x0D;&#x0A;- Variable name: &apos;resultado&apos;&#x0D;&#x0A;- Destination method: &apos;com.ipartek.formacion.uf2216.ejemplos.poo.EjemploNumerosAltaPrecision.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;euros.divide(new BigDecimal(3.4),new MathContext(32000))&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;resultado&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;com.ipartek.formacion.uf2216.ejemplos.poo{EjemploNumerosAltaPrecision.java" name="resultado" replace="true" selection="756 57" stamp="1560758579704" varType="false" version="1.0"/>
+</session>

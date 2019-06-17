@@ -1,0 +1,26 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.MathContext;
+
+public class EjemploNumerosAltaPrecision {
+
+	public static void main(String[] args) {
+		BigDecimal euros = new BigDecimal(123.45, new MathContext(5)); //new BigDecimal("123.45");
+		
+		System.out.println(euros);
+		
+		System.out.println(euros.multiply(new BigDecimal("1.21"),new MathContext(5))); //euros.doubleValue() * 1.21);
+		
+		BigInteger numeroDeDispositivosIoTEnElMundoFuturo = new BigInteger("10000000000000000000"); //10000000000000000000L);
+		System.out.println(numeroDeDispositivosIoTEnElMundoFuturo);
+		
+		double d = 123.45;
+		
+		System.out.println(d / 3.4);
+		
+		System.out.println(euros.divide(new BigDecimal(3.4), new MathContext(20000)));
+	}
+
+}
