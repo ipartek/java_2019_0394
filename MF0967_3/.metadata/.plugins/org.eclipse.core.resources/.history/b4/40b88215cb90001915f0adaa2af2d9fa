@@ -5,7 +5,6 @@ public class Punto { // extends Object
 	private static final int MINIMO_X = -100;
 	private static final int MAXIMO_X = 100;
 
-	// Java5
 	// Enumeración
 	enum Formatos {
 		SIMPLE,

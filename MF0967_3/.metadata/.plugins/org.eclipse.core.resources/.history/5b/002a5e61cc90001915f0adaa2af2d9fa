@@ -17,8 +17,6 @@ public class PoligonoPrueba {
 		for(Punto punto: poligono.getPuntosClonados()) {
 			System.out.println(punto.toString());
 		}
-		
-		
 	}
 
 }
