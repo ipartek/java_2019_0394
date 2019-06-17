@@ -1,1 +1,4 @@
 1560758579704	Extract local variable 'resultado'
+1560760981290	Extract constant 'FORMATO_FECHA'
+1560761072135	Extract method 'mostrarFecha'
+1560762558112	Delete elements

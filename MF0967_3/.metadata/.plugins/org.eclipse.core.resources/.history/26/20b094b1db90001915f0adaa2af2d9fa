@@ -1,0 +1,24 @@
+package com.ipartek.formacion.uf2216.ejemplos.poo;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class EjemploFechas {
+	public static void main(String[] args) {
+		Date ahora = new Date(); // java.UTIL.Date
+		System.out.println(ahora);
+		
+		Date inicioCurso = new Date(2019 - 1900, 6 - 1, 12, 8, 30, 0);
+		System.out.println(inicioCurso);
+		
+		Calendar ahoraNuevo = Calendar.getInstance();
+		System.out.println(String.format("%yyyymmdd", ahoraNuevo));
+		System.out.println(ahoraNuevo.get(Calendar.DATE));
+		
+		Calendar dentroDe30Dias = Calendar.getInstance();
+		
+		dentroDe30Dias.add(Calendar.DATE, 30);
+		
+		System.out.println(dentroDe30Dias);
+	}
+}
