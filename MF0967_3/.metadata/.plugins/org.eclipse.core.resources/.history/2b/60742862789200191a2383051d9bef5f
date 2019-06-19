@@ -1,0 +1,43 @@
+package com.ipartek.formacion.uf2216.ejercicios.global.accesodatos;
+
+import com.ipartek.formacion.uf2216.ejercicios.global.entidades.Libro;
+
+public class LibrosDAOColeccion implements Crudable<Libro> {
+
+	@Override
+	public Iterable<Libro> obtenerTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Libro obtenerPorId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertar(Libro objeto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modificar(Libro objeto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void borrar(Libro objeto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void borrar(long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

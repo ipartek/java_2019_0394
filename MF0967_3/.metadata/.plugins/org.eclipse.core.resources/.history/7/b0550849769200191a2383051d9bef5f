@@ -1,0 +1,5 @@
+package com.ipartek.formacion.uf2216.ejercicios.global.entidades;
+
+public class Libro {
+
+}
