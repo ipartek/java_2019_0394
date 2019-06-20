@@ -28,8 +28,6 @@ public class MantenimientoLibros {
 		System.out.println("7. Cargar");
 		System.out.println("8. Importar (CSV)");
 		System.out.println("9. Exportar (CSV)");
-		
-		System.out.println("0. Salir");
 	}
 
 }

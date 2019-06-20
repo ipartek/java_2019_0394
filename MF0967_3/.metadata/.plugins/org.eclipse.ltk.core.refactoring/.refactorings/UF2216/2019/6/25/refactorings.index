@@ -7,3 +7,5 @@
 1561027905797	Extract constant 'APPEND'
 1561028080712	Extract constant 'AUTO_FLUSH'
 1561028152454	Extract constant 'RUTA_FICHERO'
+1561029096399	Rename local variable 'fw'
+1561029756074	Extract constant 'RUTA_FICHERO_BINARIO'
