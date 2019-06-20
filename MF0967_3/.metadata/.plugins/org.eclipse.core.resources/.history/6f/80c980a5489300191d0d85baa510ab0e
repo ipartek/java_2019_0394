@@ -1,0 +1,17 @@
+package com.ipartek.formacion.uf2216.ejemplos;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class Ficheros {
+
+	public static void main(String[] args) throws IOException {
+		FileWriter fw = new FileWriter("C:\trabajos\nuevo.txt");
+		PrintWriter pw = new PrintWriter(fw);
+		
+		pw.println("Una");
+		pw.println("Dos");
+	}
+
+}

@@ -4,3 +4,6 @@
 1560762558112	Delete elements
 1560937945817	Rename type 'LibrosColeccion'
 1560938266607	Rename package 'com.ipartek.formacion.uf2216.ejercicios.global.presentacion'
+1561027905797	Extract constant 'APPEND'
+1561028080712	Extract constant 'AUTO_FLUSH'
+1561028152454	Extract constant 'RUTA_FICHERO'

@@ -12,7 +12,7 @@ content_assist_favorite_static_members=org.junit.Assert.*;org.junit.Assume.*;org
 content_assist_fill_method_arguments=true
 content_assist_guess_method_arguments=false
 content_assist_insert_completion=true
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"/>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.Crudable"><rhs name\="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.LibrosDAOColeccion"/></lhs><lhs name\="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.LibrosDAOColeccion"><rhs name\="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.LibrosDAOColeccion"/></lhs></history>
 content_assist_number_of_computers=21
 content_assist_prefix_completion=false
 content_assist_proposals_background=255,255,255

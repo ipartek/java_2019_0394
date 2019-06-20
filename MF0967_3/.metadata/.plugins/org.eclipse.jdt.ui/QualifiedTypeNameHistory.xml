@@ -5,4 +5,7 @@
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.LibrosDAOColeccion"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.entidades.Libro"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.Crudable"/>
 </qualifiedTypeNameHistroy>
