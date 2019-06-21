@@ -1,0 +1,5 @@
+package com.ipartek.formacion.uf2216.ejemplos.threads;
+
+public class Corredor {
+
+}
