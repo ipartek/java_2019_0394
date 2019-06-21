@@ -4395,3 +4395,75 @@ org.eclipse.swt.SWTException: Widget is disposed
 
 !ENTRY org.eclipse.jface.text 2 0 2019-06-21 11:58:04.300
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.eclemma.core 4 5001 2019-06-21 13:01:08.930
+!MESSAGE Error while loading coverage session (code 5001).
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error while analyzing package fragment root src at F/UF2216/bin (code 5007).
+	at org.eclipse.eclemma.internal.core.analysis.PackageFragementRootAnalyzer.analyzeInternal(PackageFragementRootAnalyzer.java:78)
+	at org.eclipse.eclemma.internal.core.analysis.PackageFragementRootAnalyzer.analyze(PackageFragementRootAnalyzer.java:50)
+	at org.eclipse.eclemma.internal.core.analysis.SessionAnalyzer.processPackageFragmentRoot(SessionAnalyzer.java:100)
+	at org.eclipse.eclemma.internal.core.analysis.SessionAnalyzer.processSession(SessionAnalyzer.java:80)
+	at org.eclipse.eclemma.internal.core.JavaCoverageLoader$LoadSessionJob.run(JavaCoverageLoader.java:82)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.internal.resources.ResourceException: File not found: C:\0394\MF0967_3\UF2216\bin\com\ipartek\formacion\uf2216\ejemplos\ExpresionesRegulares.class.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:833)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:280)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:60)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walk(ResourceTreeWalker.java:50)
+	at org.eclipse.eclemma.internal.core.analysis.PackageFragementRootAnalyzer.analyzeInternal(PackageFragementRootAnalyzer.java:73)
+	... 5 more
+Caused by: java.lang.Exception: File not found: C:\0394\MF0967_3\UF2216\bin\com\ipartek\formacion\uf2216\ejemplos\ExpresionesRegulares.class.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	... 16 more
+!SUBENTRY 1 org.eclipse.eclemma.core 4 5007 2019-06-21 13:01:08.930
+!MESSAGE Error while analyzing package fragment root src at F/UF2216/bin (code 5007).
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/UF2216/bin/com/ipartek/formacion/uf2216/ejemplos/ExpresionesRegulares.class)[368]: java.lang.Exception: File not found: C:\0394\MF0967_3\UF2216\bin\com\ipartek\formacion\uf2216\ejemplos\ExpresionesRegulares.class.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:833)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:280)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:60)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walk(ResourceTreeWalker.java:50)
+	at org.eclipse.eclemma.internal.core.analysis.PackageFragementRootAnalyzer.analyzeInternal(PackageFragementRootAnalyzer.java:73)
+	at org.eclipse.eclemma.internal.core.analysis.PackageFragementRootAnalyzer.analyze(PackageFragementRootAnalyzer.java:50)
+	at org.eclipse.eclemma.internal.core.analysis.SessionAnalyzer.processPackageFragmentRoot(SessionAnalyzer.java:100)
+	at org.eclipse.eclemma.internal.core.analysis.SessionAnalyzer.processSession(SessionAnalyzer.java:80)
+	at org.eclipse.eclemma.internal.core.JavaCoverageLoader$LoadSessionJob.run(JavaCoverageLoader.java:82)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 2 org.eclipse.core.resources 4 368 2019-06-21 13:01:08.930
+!MESSAGE File not found: C:\0394\MF0967_3\UF2216\bin\com\ipartek\formacion\uf2216\ejemplos\ExpresionesRegulares.class.
+!STACK 0
+java.lang.Exception: File not found: C:\0394\MF0967_3\UF2216\bin\com\ipartek\formacion\uf2216\ejemplos\ExpresionesRegulares.class.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:833)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:280)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:60)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walkResource(ResourceTreeWalker.java:74)
+	at org.eclipse.eclemma.internal.core.analysis.ResourceTreeWalker.walk(ResourceTreeWalker.java:50)
+	at org.eclipse.eclemma.internal.core.analysis.PackageFragementRootAnalyzer.analyzeInternal(PackageFragementRootAnalyzer.java:73)
+	at org.eclipse.eclemma.internal.core.analysis.PackageFragementRootAnalyzer.analyze(PackageFragementRootAnalyzer.java:50)
+	at org.eclipse.eclemma.internal.core.analysis.SessionAnalyzer.processPackageFragmentRoot(SessionAnalyzer.java:100)
+	at org.eclipse.eclemma.internal.core.analysis.SessionAnalyzer.processSession(SessionAnalyzer.java:80)
+	at org.eclipse.eclemma.internal.core.JavaCoverageLoader$LoadSessionJob.run(JavaCoverageLoader.java:82)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
