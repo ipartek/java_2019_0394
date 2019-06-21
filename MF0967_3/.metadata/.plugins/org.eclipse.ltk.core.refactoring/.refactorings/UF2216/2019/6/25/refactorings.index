@@ -9,3 +9,5 @@
 1561028152454	Extract constant 'RUTA_FICHERO'
 1561029096399	Rename local variable 'fw'
 1561029756074	Extract constant 'RUTA_FICHERO_BINARIO'
+1561112567750	Extract constant 'AUTO_FLUSH'
+1561113059354	Extract constant 'AUTO_FLUSH'
