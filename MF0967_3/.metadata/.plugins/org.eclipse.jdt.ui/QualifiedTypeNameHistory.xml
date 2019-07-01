@@ -6,14 +6,15 @@
 <fullyQualifiedTypeName name="java.lang.Iterable"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.LibrosDAOColeccion"/>
-<fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.entidades.Libro"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.Crudable"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
 <fullyQualifiedTypeName name="javax.xml.ws.ServiceMode"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+<fullyQualifiedTypeName name="java.net.ServerSocket"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.entidades.Libro"/>
 </qualifiedTypeNameHistroy>

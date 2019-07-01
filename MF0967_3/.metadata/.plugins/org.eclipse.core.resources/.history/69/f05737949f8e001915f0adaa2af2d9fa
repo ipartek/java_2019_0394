@@ -1,9 +1,0 @@
-package com.ipartek.formacion.uf2216.ejemplos.poo;
-
-public class LambdaPrueba {
-
-	public LambdaPrueba() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
