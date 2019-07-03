@@ -47,40 +47,69 @@ a:hover {
 body > nav {
     background: darkblue;
     color: white;
+    
+    top:0;
+    /* TODO: Activar Sticky */
+    /* position: -webkit-sticky;
+    position: sticky; */
 }
 
 body > nav ul {
     list-style: none;
-    padding: 0.5em 1em;
+    padding: 0;
     margin: 0;
+}
+
+body > nav li > ul {
+    position: absolute;
+    
+    top: 2em;
+    left: 0;
+    
+    display: none;
+}
+
+body > nav li > ul > li {
+    background: darkblue;
+    color: white;
+    
+    width: 5.5em;
+}
+
+body > nav li:hover ul {
+    background: darkblue;
+    color: white;
+    
+    padding-bottom: 0;
+    bottom: 0;
+    
+    display: block;
 }
 
 body > nav li {
     position: relative;
-    display: inline;
+    display: inline-block;
     padding-bottom: 0;
     bottom: 0;
-    padding: 1em;
+    padding: 0.5em;
 
     transition: bottom 1s ease, padding-bottom 1s ease;
 }
 
 body > nav li a {
-    padding: 1em;
+    padding: 0.5em;
 }
 
-body > nav li:hover {
+body > nav > ul > li:hover > a, body > nav > ul > li:hover > ul > li:hover > a {
     background: white;
-}
-
-body > nav li a:hover {
-    text-decoration: none;
     color: darkblue;
+    
+    text-decoration: none;
 }
 
 body > nav li:hover {
-    padding-bottom: 2em;
-    bottom: 1em;
+    /*padding-bottom: 2em;
+    bottom: 1em;*/
 }
 
 main {
