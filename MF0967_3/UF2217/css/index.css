@@ -107,11 +107,6 @@ body > nav > ul > li:hover > a, body > nav > ul > li:hover > ul > li:hover > a {
     text-decoration: none;
 }
 
-body > nav li:hover {
-    /*padding-bottom: 2em;
-    bottom: 1em;*/
-}
-
 main {
     margin: 1em;
 }
