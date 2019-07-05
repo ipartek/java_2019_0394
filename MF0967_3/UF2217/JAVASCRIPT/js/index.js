@@ -2,6 +2,8 @@
 /*eslint-env browser, es6*/
 /*eslint no-console: "off"*/
 
+/*globals comprobarLetraNif*/
+
 /* Puesto en brackets jslint.options {es6: true} */
 console.log('Dentro de <script>');
 
@@ -29,7 +31,7 @@ window.onload = function () {
     document.forms[0].onsubmit = function (e) {
         e.preventDefault(); //Evitar propagación de evento
         
-        var inputNombre, resultado;
+        var inputNombre, resultado, inputNif, span;
         
         console.log('Botón pulsado');
         
@@ -41,7 +43,27 @@ window.onload = function () {
         
         resultado.innerHTML = inputNombre.value;
         
+        inputNif = document.getElementById('nif');
+        
+        if (comprobarLetraNif(inputNif.value)) {
+            resultado.innerHTML += ' ' + inputNif.value;
+            
+            inputNif.className = '';
+        } else {
+            resultado.innerHTML += ' error en el NIF';
+            
+            inputNif.className = 'error';
+            
+            //inputNif.parentNode.innerHTML += '<span class="error">ERROR EN EL NIF</span>';
+            
+            span = document.createElement('span');
+            span.className = 'error';
+            span.innerHTML = 'Error en el NIF';
+            inputNif.parentNode.appendChild(span);
+        }
+        
+        //resultado.innerHTML += comprobarLetraNif(inputNif.value) ? ' ' + inputNif.value : ' error en el NIF';
+        
         //return false; //Evitar propagación de evento
     };
 };
-    

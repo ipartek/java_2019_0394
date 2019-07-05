@@ -15,6 +15,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai|Montserrat&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="css/errores.css" />
     <link rel="stylesheet" href="../css/index.css" />
     
     <!--
@@ -31,6 +32,7 @@
 
     <script src="../js/datetime-local-polyfill.min.js"></script>
     
+    <script src="js/biblioteca.js"></script>
     <script src="js/index.js"></script>
 </head>
 
@@ -154,7 +156,7 @@
                     </div>
                     <div>
                         <label for="nif">Nif</label>
-                        <input id="nif" name="nif" placeholder="Nif" />
+                        <input id="nif" name="nif" placeholder="12345678A" pattern="^[XYZ\d]\d{7}[TRWAGMYFPDXBNJZSQVHLCKE]$" />
                     </div>
                     
                     <div>
