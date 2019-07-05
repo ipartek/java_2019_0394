@@ -3,7 +3,7 @@
 /*eslint-env browser, es6*/
 /*eslint no-console: "off"*/
 
-function transformarLetraExtrangeroEnNumero(numero) {
+function transformarLetraExtranjeroEnNumero(numero) {
     'use strict';
     
     var letra = numero[0];
@@ -40,7 +40,7 @@ function calcularLetraNif(numero) {
     
     //numero[0] = posicion < 0 ? numero[0] : posicion;
         
-    return letras[transformarLetraExtrangeroEnNumero(numero) % 23];
+    return letras[transformarLetraExtranjeroEnNumero(numero) % 23];
 }
 
 function comprobarLetraNif(nif) {
