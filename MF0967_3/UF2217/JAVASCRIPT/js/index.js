@@ -50,10 +50,10 @@ window.onload = function () {
 
             inputNif.className = '';
             
-            if (inputNif.error) {
-                inputNif.parentNode.removeChild(inputNif.error);
+            if (inputNif.mensajeError) {
+                inputNif.parentNode.removeChild(inputNif.mensajeError);
 
-                delete inputNif.error;
+                delete inputNif.mensajeError;
             }
         } else {
             if (inputNif.className !== 'error') {
@@ -69,7 +69,7 @@ window.onload = function () {
                 span.innerHTML = 'Error en el NIF';
                 inputNif.parentNode.appendChild(span);
                 
-                inputNif.error = span;
+                inputNif.mensajeError = span;
             }
         }
 
