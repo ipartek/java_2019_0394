@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Para visualización correcta en móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ejemplo HTML</title>
+
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery.ui.all.css" />
+    <link rel="stylesheet" href="../css/datetime-local-polyfill.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai|Montserrat&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/errores.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    
+    <!--
+       <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+    -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+    <script src="../js/modernizr.min.js"></script>
+
+    <script src="../js/datetime-local-polyfill.min.js"></script>
+    
+    <script src="js/biblioteca.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body> <!-- style="background: lightgray"-->
+    <header>
+        <h1>Mi página de demo de HTML</h1>
+        <p>Pequeños ejemplos HTML</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Principal</a></li>
+            <li><a href="segunda.html">Segunda</a>
+                <ul>
+                    <li><a href="opcion1">Opción 1</a></li>
+                    <li><a href="opcion2">Opción 2</a></li>
+                    <li><a href="opcion3">Opción 3</a></li>
+                </ul>
+            </li>
+            <li><a href="tel:941231234">941231234</a></li>
+        </ul>
+
+        <!-- ul>li*5>a[href=opcion$]{Opcion $} -->
+    </nav>
+
+    <main>
+        <section>
+            <h2>HTML</h2>
+            <article id="chapa" class="chapa">
+                <h2>Introducción chapa</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ratione nulla, non labore eos exercitationem nihil aspernatur obcaecati incidunt numquam <a href="#">probatus</a> dignissimos atque adipisci iure, fugiat minus est sit eaque quasi.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos veritatis laborum quo sit asperiores eius eveniet magnam aspernatur alias nostrum animi reprehenderit earum libero, officiis fugit debitis autem cum!</p>
+            </article>
+
+            <article id="tablas">
+                <h2>Tablas</h2>
+
+                <!--
+                    table>(thead>tr>th{Id}+th{Nombre}+th{Apellido})+(tbody>tr*5>th{id$}+td{Nombre$}+td{Apellido$})+(tfoot>tr>th{Id}+th{Nombre}+th{Apellido})
+                    -->
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>id1</th>
+                            <td>Nombre1</td>
+                            <td>Apellido1</td>
+                        </tr>
+                        <tr>
+                            <th>id2</th>
+                            <td>Nombre2</td>
+                            <td>Apellido2</td>
+                        </tr>
+                        <tr>
+                            <th>id3</th>
+                            <td>Nombre3</td>
+                            <td>Arrigomulakoetxe aetetetetet eteteteteta</td>
+                        </tr>
+                        <tr>
+                            <th>id4</th>
+                            <td>Nombre4</td>
+                            <td>Apellido4</td>
+                        </tr>
+                        <tr>
+                            <th>id5</th>
+                            <td>Nombre5</td>
+                            <td>Apellido5</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+
+            <article id="listas">
+                <h2>Listas</h2>
+
+                <ol>
+                    <li>Opción 1</li>
+                    <li>Opción 2
+                        <ol>
+                            <li>Opción 2.1</li>
+                            <li>Opción 2.2</li>
+                        </ol>
+                    </li>
+                </ol>
+
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>Lenguaje de Marcas</dd>
+                    <dt>CSS</dt>
+                    <dd>Hojas de Estilo en Cascada</dd>
+                    <dt>JavaScript</dt>
+                    <dd>Lenguaje Script</dd>
+                </dl>
+            </article>
+
+            <article id="formularios">
+                <h2>Formularios</h2>
+
+                <form action="#" method="get" autocomplete="off">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" placeholder="Pon tu nombre" required />
+                    </div>
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input id="apellido" name="apellido" placeholder="Apellido" />
+                    </div>
+                    <div>
+                        <label for="nif">Nif</label>
+                        <input id="nif" name="nif" placeholder="12345678A" pattern="^[XYZ\d]\d{7}[TRWAGMYFPDXBNJZSQVHLCKE]$" />
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email del trabajo" />
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono del trabajo" />
+                    </div>
+                    <div>
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="La contraseña que me diste" />
+                    </div>
+                    <div>
+                        <label for="fecha">Fecha</label>
+                        <input type="datetime-local" id="fecha" name="fecha" />
+                    </div>
+                    <div>
+                        <label for="fecha-date">Fecha</label>
+                        <input type="date" id="fecha-date" name="fecha-date" />
+                    </div>
+                    <div>
+                        <label for="fecha-time">Fecha</label>
+                        <input type="time" id="fecha-time" name="fecha-time" />
+                    </div>
+                    <div>
+                        <label for="euros">Euros</label>
+                        <input type="number" step="0.01" id="euros" name="euros" placeholder="Cuánto me vas a donar para que me compre cacharritos"/>
+                    </div>
+                    <div>
+                        <label for="estilo-informal">Informal</label>
+                        <input type="radio" id="estilo-informal" name="estilo" value="informal" />
+                    </div>
+                    <div>
+                        <label for="estilo-formal">Formal</label>
+                        <input type="radio" id="estilo-formal" name="estilo" value="formal" />
+                    </div>
+
+                    <div>
+                        <button>Enviar datos</button>
+                    </div>
+                    <div>
+                        <p id="resultado"></p>
+                    </div>
+                </form>
+            </article>
+        </section>
+
+        <section>
+            <h2>CSS</h2>
+        </section>
+
+        <section>
+            <h2>JavaScript</h2>
+        </section>
+    </main>
+
+    <aside>
+        <h2>Extras interesantes</h2>
+        <nav>
+            <ul>
+                <li><a href="extras1">Extras 1</a></li>
+                <li><a href="extras2">Extras 2</a></li>
+                <li><a href="extras3">Extras 3</a></li>
+                <li><a href="extras4">Extras 4</a></li>
+                <li><a href="extras5">Extras 5</a></li>
+                <li><a href="extras6">Extras 6</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <footer>
+        &copy; 2019 Javier Lete &#128512;
+    </footer>
+</body></html>
