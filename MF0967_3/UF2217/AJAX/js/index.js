@@ -3,18 +3,52 @@
 /*eslint no-console: "off"*/
 /*global $*/
 
+function fallo() {
+    'use strict';
+    alert('Ha habido un error en el acceso a los datos');
+}
+
+function siempre() {
+    'use strict';
+    console.log('Operación finalizada');
+}
+
 $(function () {
     'use strict';
+
+    var url = 'http://localhost:3000/clientes/';
     
-    $.getJSON('datos.json').done(function (datos) {
+    $.post(url, { nombre: 'Juan', apellido: 'Juanes' }, function () {
+        console.log('Registro añadido correctamente');
+    });
+    
+    $.ajax({
+        url: url + '2',
+        method: 'PUT',
+        data: { id: 2, nombre: 'Pepito', apellido: 'de los Palotes' }
+    }).done(function (dato) {
+        console.log('Modificado', dato);
+    }).fail(fallo).always(siempre);
+    
+    $.ajax({
+        url: url + '1',
+        method: 'DELETE'
+    }).done(function (dato) {
+        console.log('Borrado', dato);
+    }).fail(fallo).always(siempre);
+    
+    
+    $.getJSON(url).done(function (datos) {
+        console.log('Recibidos datos');
         $(datos).each(function () {
             $('ul').append('<li>' + this.nombre + '</li>');
         });
-    }).fail(function () {
-        alert('Ha habido un error en el acceso a los datos');
-    }).always(function () {
-        alert('Proceso completado');
-    });
+    }).fail(fallo).always(siempre);
+
+    $.getJSON(url + '1').done(function (dato) {
+        console.log('Recibido dato');
+        $('#registro').text(dato.nombre);
+    }).fail(fallo).always(siempre);
 });
 
 /*
