@@ -6,10 +6,14 @@
 $(function () {
     'use strict';
     
-    $.getJSON('datos.json', function (datos) {
+    $.getJSON('datos.json').done(function (datos) {
         $(datos).each(function () {
             $('ul').append('<li>' + this.nombre + '</li>');
         });
+    }).fail(function () {
+        alert('Ha habido un error en el acceso a los datos');
+    }).always(function () {
+        alert('Proceso completado');
     });
 });
 
