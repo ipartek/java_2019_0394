@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="css/fontawesome.all.min.css" />
+    
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+
+    <title>Hello, world!</title>
+</head>
+
+<body class="container-fluid" style="position: relative">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="10000" style="position: absolute; top: 0; right: 0; z-index: 1">
+        <div class="toast-header">
+            <strong class="mr-auto">Bootstrap</strong>
+            <small>¿A que mola'</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Esto es una tostada de bootstrap
+        </div>
+    </div>
+    <div class="row">
+        <header class="col-12 jumbotron text-center">
+            <h1 class="display-1">Mi página de demo de HTML</h1>
+            <p class="lead">Pequeños ejemplos HTML</p>
+        </header>
+
+        <nav class="col-12 d-print-none" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Primer nivel</a></li>
+                <li class="breadcrumb-item"><a href="#">Segundo nivel</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Nivel actual</li>
+            </ol>
+        </nav>
+
+        <nav class="col-12 navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="#">Demo Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Principal<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Segunda
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Opcion 1</a>
+                            <a class="dropdown-item" href="#">Opcion 2</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Opcion 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tel:941231234">941231234</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="col-12 d-print-none alert alert-info alert-dismissible fade show" role="alert">
+            Bienvenidos a esta demostración de Bootstrap
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <main class="col-12">
+            <section class="row">
+                <h2 class="col-xl-12">HTML</h2>
+                <article id="chapa" class="chapa col-xl-3 col-lg-12 col-sm-6">
+                    <h2>Introducción chapa</h2>
+                    <figure class="figure shadow">
+                        <img src="imgs/HTML5.svg" class="figure-img img-thumbnail img-fluid" alt="" />
+                        <figcaption class="figure-caption text-right">Logotipo de HTML5</figcaption>
+                    </figure>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos <code>veritatis</code> laborum quo sit asperiores eius eveniet magnam aspernatur alias nostrum animi reprehenderit earum libero, officiis fugit debitis autem cum!</p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/pSRcYu6JcDM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <pre>Hola
+Qué tal estás
+
+5&lt;2  Johnson &amp; Johnson
+
+Hecho con la etiqueta <code>&lt;pre&gt;</code>
+
+Uno     Dos     Tres     Cuatro
+</pre>
+                </article>
+
+                <article id="tablas" class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <h2>Tablas</h2>
+
+                    <!--
+                    table>(thead>tr>th{Id}+th{Nombre}+th{Apellido})+(tbody>tr*5>th{id$}+td{Nombre$}+td{Apellido$})+(tfoot>tr>th{Id}+th{Nombre}+th{Apellido})
+                    -->
+
+                    <div class="table-responsive shadow">
+                        <table class="table table-striped table-bordered table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>id1</th>
+                                    <td>Nombre1</td>
+                                    <td>Apellido1</td>
+                                </tr>
+                                <tr>
+                                    <th>id2</th>
+                                    <td>Nombre2</td>
+                                    <td>Apellido2</td>
+                                </tr>
+                                <tr class="table-primary">
+                                    <th>id3</th>
+                                    <td>Nombre3</td>
+                                    <td class="bg-warning">Arrigomulakoetxeaeteteteteteteteteteta</td>
+                                </tr>
+                                <tr>
+                                    <th>id4</th>
+                                    <td>Nombre4</td>
+                                    <td>Apellido4</td>
+                                </tr>
+                                <tr>
+                                    <th>id5</th>
+                                    <td>Nombre5</td>
+                                    <td>Apellido5</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </article>
+
+                <article id="listas" class="col-xl-3 col-lg-4 col-sm-6">
+                    <h2>Listas</h2>
+
+                    <ol class="list-unstyled">
+                        <li>Opción 1</li>
+                        <li>Opción 2
+                            <ol class="list-unstyled">
+                                <li>Opción 2.1</li>
+                                <li>Opción 2.2</li>
+                            </ol>
+                        </li>
+                    </ol>
+
+                    <dl class="row">
+                        <dt class="col-xl-4">HTML</dt>
+                        <dd class="col-xl-8">Lenguaje de Marcas</dd>
+                        <dt class="col-xl-4">CSS</dt>
+                        <dd class="col-xl-8">Hojas de Estilo en Cascada</dd>
+                        <dt class="col-xl-4">JavaScript</dt>
+                        <dd class="col-xl-8">Lenguaje Script</dd>
+                    </dl>
+                </article>
+
+                <article id="formularios" class="col-xl-3 col-lg-4 col-sm-6">
+                    <h2>Formularios</h2>
+
+                    <form action="#" method="get">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input id="nombre" name="nombre" placeholder="Pon tu nombre" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input id="apellido" name="apellido" placeholder="Apellido" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                </div>
+                                <input type="email" id="email" name="email" placeholder="Email del trabajo" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono del trabajo" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" placeholder="La contraseña que me diste" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="datetime-local" id="fecha" name="fecha" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha-date">Fecha</label>
+                            <input type="date" id="fecha-date" name="fecha-date" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha-time">Fecha</label>
+                            <input type="time" id="fecha-time" name="fecha-time" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="euros">Euros</label>
+                            <div class="input-group">
+                                <input type="number" step="0.01" id="euros" name="euros" placeholder="Cuánto me vas a donar para que me compre cacharritos" class="form-control" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">€</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estilo-informal">Informal</label>
+                            <input type="radio" id="estilo-informal" name="estilo" value="informal" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="estilo-formal">Formal</label>
+                            <input type="radio" id="estilo-formal" name="estilo" value="formal" class="form-control" />
+                        </div>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary active">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Example multiple select</label>
+                            <select multiple class="form-control" id="exampleFormControlSelect2">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Enviar datos <i class="fas fa-save"></i></button>
+                        </div>
+                    </form>
+                </article>
+            </section>
+
+            <section>
+                <h2>CSS</h2>
+            </section>
+
+            <section>
+                <h2>JavaScript</h2>
+            </section>
+        </main>
+
+        <aside class="col-12 d-print-none">
+            <h2>Extras interesantes</h2>
+            <nav>
+                <ul>
+                    <li><a href="extras1">Extras 1</a></li>
+                    <li><a href="extras2">Extras 2</a></li>
+                    <li><a href="extras3">Extras 3</a></li>
+                    <li><a href="extras4">Extras 4</a></li>
+                    <li><a href="extras5">Extras 5</a></li>
+                    <li><a href="extras6">Extras 6</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <footer class="col-12 d-print-none">
+            &copy; 2019 Javier Lete &#128512;
+        </footer>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        $(function() {
+            $('[data-toggle="popover"]').popover();
+            $('.toast').toast('show');
+        });
+
+    </script>
+</body>
+
+</html>

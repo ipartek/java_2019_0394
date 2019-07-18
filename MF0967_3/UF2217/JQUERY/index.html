@@ -9,13 +9,14 @@
     
     <title>Ejemplo HTML</title>
 
-    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery.ui.all.css" />
-    <link rel="stylesheet" href="css/datetime-local-polyfill.css" />
+    <link rel="stylesheet" href="../css/datetime-local-polyfill.css" />
     
     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai|Montserrat&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/errores.css" />
+    <link rel="stylesheet" href="../css/index.css" />
     
     <!--
        <style>
@@ -27,9 +28,12 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
-    <script src="js/modernizr.min.js"></script>
+    <script src="../js/modernizr.min.js"></script>
 
-    <script src="js/datetime-local-polyfill.min.js"></script>
+    <script src="../js/datetime-local-polyfill.min.js"></script>
+    
+    <script src="js/biblioteca.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <body> <!-- style="background: lightgray"-->
@@ -141,15 +145,20 @@
             <article id="formularios">
                 <h2>Formularios</h2>
 
-                <form action="#" method="get">
+                <form action="#" method="get" autocomplete="off">
                     <div>
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" name="nombre" placeholder="Pon tu nombre" />
+                        <input id="nombre" name="nombre" placeholder="Pon tu nombre" required />
                     </div>
                     <div>
                         <label for="apellido">Apellido</label>
                         <input id="apellido" name="apellido" placeholder="Apellido" />
                     </div>
+                    <div>
+                        <label for="nif">Nif</label>
+                        <input id="nif" name="nif" placeholder="12345678A" pattern="^[XYZ\d]\d{7}[TRWAGMYFPDXBNJZSQVHLCKE]$" />
+                    </div>
+                    
                     <div>
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email del trabajo" />
@@ -189,6 +198,9 @@
 
                     <div>
                         <button>Enviar datos</button>
+                    </div>
+                    <div>
+                        <p id="resultado"></p>
                     </div>
                 </form>
             </article>

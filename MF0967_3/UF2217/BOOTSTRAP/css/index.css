@@ -1,0 +1,11 @@
+.table-primary, .table-primary>td, .table-primary>th {
+    background-color: magenta;
+}
+
+.table-hover .table-primary:hover>td, .table-hover .table-primary:hover>th {
+    background-color: darkmagenta;
+}
+
+figure {
+    width: 100%;
+}
