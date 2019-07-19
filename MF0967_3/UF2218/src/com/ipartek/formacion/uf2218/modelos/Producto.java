@@ -13,6 +13,10 @@ public class Producto {
 		this.nombre = nombre;
 		this.precio = precio;
 	}
+	
+	public Producto() {
+		
+	}
 
 	public Long getId() {
 		return id;
