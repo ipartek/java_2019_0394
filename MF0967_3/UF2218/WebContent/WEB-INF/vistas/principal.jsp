@@ -10,7 +10,9 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	
 	<h1>Principal</h1>
-	<h2>Bienvenido ${usuario.usuario}</h2>
+	<c:if test="${usuario != null}">
+		<h2>Bienvenido ${usuario.usuario}</h2>
+	</c:if>
 	<p>
 		<a href="logout">Logout</a>
 	</p>
