@@ -1,4 +1,4 @@
-package com.ipartek.formacion.uf2218.servlets;
+package com.ipartek.formacion.uf2218.controladores;
 
 import java.io.IOException;
 
@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 		Usuario usuario = new Usuario(
 				request.getParameter("usuario"), 
 				request.getParameter("password")
-		); 
+		);
 		
 //		if(usuario == null || password == null) {
 //			//nombre = "DESCONOCIDO";
@@ -39,10 +39,10 @@ public class LoginServlet extends HttpServlet {
 		// 3. Llamar a la lógica de negocio con los objetos correspondientes
 		if(LogicaNegocio.autenticar(usuario)) {
 			// 4. Redireccionar a la siguiente vista
-			response.sendRedirect("principal.html");
+			response.sendRedirect("vistas/principal.html");
 		} else {
 			// 4. Redireccionar a la siguiente vista
-			response.sendRedirect("error.html");
+			response.sendRedirect("vistas/error.html");
 		}
 		
 //		PrintWriter out = response.getWriter();
