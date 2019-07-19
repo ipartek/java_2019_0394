@@ -8,9 +8,10 @@
 <title>Principal</title>
 </head>
 <body>
-	<% Usuario usuario = (Usuario)request.getSession().getAttribute("usuario"); %>
+	<jsp:useBean id="usuario" scope="session" class="com.ipartek.formacion.uf2218.modelos.Usuario" />
+	<%-- <% Usuario usuario = (Usuario)request.getSession().getAttribute("usuario"); %>--%>
 	<h1>Principal</h1>
-	<h2>Bienvenido <%= usuario != null ? usuario.getUsuario() : "DESCONOCIDO" %></h2>
+	<h2>Bienvenido <jsp:getProperty property="usuario" name="usuario"/> <%-- <%= usuario != null ? usuario.getUsuario() : "DESCONOCIDO" %> --%></h2>
 	<p>
 		<a href="logout">Logout</a>
 	</p>

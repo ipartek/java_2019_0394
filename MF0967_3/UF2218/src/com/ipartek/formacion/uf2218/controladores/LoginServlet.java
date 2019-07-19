@@ -15,7 +15,7 @@ import com.ipartek.formacion.uf2218.negocio.LogicaNegocio;
 
 @WebServlet(name = "login", urlPatterns = { "/login" })
 public class LoginServlet extends HttpServlet {
-	private static final String VISTAS_PRINCIPAL_JSP = "/WEB-INF/vistas/principal.jsp";
+	private static final String VISTAS_PRINCIPAL_JSP = "principal";
 	private static final String VISTAS_LOGIN_JSP = "/WEB-INF/vistas/login.jsp";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
