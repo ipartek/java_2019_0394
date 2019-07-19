@@ -2,6 +2,7 @@ package com.ipartek.formacion.uf2218.modelos;
 
 public class Usuario {
 	private String usuario, password;
+	private String error;
 	
 	public Usuario(String usuario, String password) {
 		setUsuario(usuario);
@@ -28,6 +29,14 @@ public class Usuario {
 			throw new ModeloException("No se admiten passwords nulas");
 		}
 		this.password = password;
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
 	}
 
 	@Override
