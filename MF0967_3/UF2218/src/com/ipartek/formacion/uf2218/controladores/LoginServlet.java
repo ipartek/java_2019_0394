@@ -40,7 +40,6 @@ public class LoginServlet extends HttpServlet {
 					request.getParameter("password")
 			);
 		} catch (ModeloException e) {
-			//response.sendRedirect("vistas/login.jsp");
 			requestDispatcherLogin.forward(request, response);
 			return;
 		}
@@ -48,13 +47,10 @@ public class LoginServlet extends HttpServlet {
 		// 3. Llamar a la lógica de negocio con los objetos correspondientes
 		if(LogicaNegocio.autenticar(usuario)) {
 			// 4. Redireccionar a la siguiente vista
-			//response.sendRedirect("vistas/principal.html");
 			request.getSession().setAttribute("usuario", usuario);
-			//request.getRequestDispatcher("vistas/principal.jsp").forward(request, response);
 			requestDispatcherPrincipal.forward(request, response);
 		} else {
 			// 4. Redireccionar a la siguiente vista
-			//response.sendRedirect("vistas/login.jsp?usuario=" + request.getParameter("usuario"));
 			usuario.setError("Login incorrecto");
 			
 			//Guarda un objeto usuario en la Request
