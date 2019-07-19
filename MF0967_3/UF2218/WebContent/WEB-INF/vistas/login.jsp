@@ -1,18 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.ipartek.formacion.uf2218.modelos.Usuario"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Ejemplo de formulario</title>
-</head>
-<body>
-	<%-- 
-	<% for(int i = 1; i <= 6; i++) { %>
-		<h<%=i %>>Ejemplo JSP nivel <%=i %></h2>
-	<% } %>
-	--%>
-	
+<%@ include file="/WEB-INF/vistas/includes/cabecera.jsp" %>
 	<% Usuario usuario = (Usuario)request.getAttribute("usuario"); %>
 	
 	<form action="login" method="post">
@@ -32,5 +20,4 @@
 			<%-- <%=request.getParameter("error") != null ? request.getParameter("error") : "" %> --%>
 		</div>
 	</form>
-</body>
-</html>
+<%@ include file="/WEB-INF/vistas/includes/pie.jsp" %>
