@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Ejemplo JavaEE</title>
+<base href="${pageContext.request.contextPath}/" />
+<link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
 <header>
