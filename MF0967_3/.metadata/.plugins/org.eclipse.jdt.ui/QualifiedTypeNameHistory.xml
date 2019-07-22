@@ -19,5 +19,7 @@
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.entidades.Libro"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.modelos.ModeloException"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.modelos.Usuario"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.modelos.Producto"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.negocio.LogicaNegocio"/>
 </qualifiedTypeNameHistroy>
