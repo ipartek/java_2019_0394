@@ -32,6 +32,9 @@ public class LoginServlet extends HttpServlet {
 				request.getRequestDispatcher(VISTAS_LOGIN_JSP).forward(request, response);
 				return;
 			}
+		} else {
+			request.getRequestDispatcher("/admin/").forward(request, response);
+			return;
 		}
 		
 		if(!usuario.isValido()) {
@@ -43,9 +46,8 @@ public class LoginServlet extends HttpServlet {
 		// Ejecutar lógica de negocio
 		if(LogicaNegocio.isAutenticado(usuario)) {
 			// Redireccionar a un controlador
-			request.getServletContext().setAttribute("atributoGlobal", "Mi atributo global");
 			request.getSession().setAttribute("usuario", usuario);
-			request.getRequestDispatcher("principal").forward(request, response);
+			request.getRequestDispatcher("/admin/").forward(request, response);
 		} else {
 			// Redireccionar a una vista
 			usuario.setErrorUsuario("Las credenciales no son correctas");
