@@ -43,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 		// Ejecutar lógica de negocio
 		if(LogicaNegocio.isAutenticado(usuario)) {
 			// Redireccionar a un controlador
+			request.getServletContext().setAttribute("atributoGlobal", "Mi atributo global");
 			request.getSession().setAttribute("usuario", usuario);
 			request.getRequestDispatcher("principal").forward(request, response);
 		} else {
