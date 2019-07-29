@@ -8,7 +8,7 @@
 <title>Calculadora</title>
 </head>
 <body>
-	<form action="calcular">
+	<form action="calcular" method="post">
 		<input type="number" name="op1" value="${cal.op1}"/>
 		<span class="error">${cal.errorOp1}</span>
 		<select name="op">
