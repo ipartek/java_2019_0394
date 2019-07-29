@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Calculadora</title>
 <style>
-.error { color: red }
+.error { color: red; }
 </style>
 </head>
 <body>
