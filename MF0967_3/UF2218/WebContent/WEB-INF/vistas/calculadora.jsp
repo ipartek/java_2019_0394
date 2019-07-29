@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Calculadora</title>
+<style>
+.error { color: red }
+</style>
 </head>
 <body>
 	<form action="calcular" method="post">

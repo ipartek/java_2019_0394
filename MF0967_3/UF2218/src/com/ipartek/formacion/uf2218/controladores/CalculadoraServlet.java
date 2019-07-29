@@ -12,6 +12,7 @@ import com.ipartek.formacion.uf2218.modelos.Calculadora;
 
 @WebServlet("/calculadora/calcular")
 public class CalculadoraServlet extends HttpServlet {
+	private static final String CALCULADORA_JSP = "/WEB-INF/vistas/calculadora.jsp";
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -23,13 +24,13 @@ public class CalculadoraServlet extends HttpServlet {
 		op = request.getParameter("op");
 
 		if(op == null || op2 == null || op1 == null) {
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher(CALCULADORA_JSP).forward(request, response);
 			return;
 		}
 		
 		Calculadora cal = new Calculadora(op1, op, op2);
 		request.setAttribute("cal", cal);
-		request.getRequestDispatcher("/calculadora/index.jsp").forward(request, response);
+		request.getRequestDispatcher(CALCULADORA_JSP).forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
