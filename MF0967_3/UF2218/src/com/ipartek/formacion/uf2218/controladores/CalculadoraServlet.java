@@ -1,11 +1,14 @@
 package com.ipartek.formacion.uf2218.controladores;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ipartek.formacion.uf2218.modelos.Calculadora;
 
 @WebServlet("/calculadora/calcular")
 public class CalculadoraServlet extends HttpServlet {
@@ -13,37 +16,20 @@ public class CalculadoraServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		long op1, op2, res;
-		char op;
+		String op1, op2, op;
 
-		op1 = Long.parseLong(request.getParameter("op1"));
-		op2 = Long.parseLong(request.getParameter("op2"));
-		op = request.getParameter("op").charAt(0);
+		op1 = request.getParameter("op1");
+		op2 = request.getParameter("op2");
+		op = request.getParameter("op");
 
-		switch (op) {
-		case '+':
-			res = op1 + op2;
-			break;
-		case '-':
-			res = op1 - op2;
-			break;
-		case '*':
-			res = op1 * op2;
-			break;
-		case '/':
-			res = op1 / op2;
-			break;
-		default:
-			throw new RuntimeException("La opción " + op + " no existe");
+		if(op == null || op2 == null || op1 == null) {
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+			return;
 		}
 		
-		request.setAttribute("op1", op1);
-		request.setAttribute("op2", op2);
-		request.setAttribute("op", op);
-		request.setAttribute("res", res);
-		
+		Calculadora cal = new Calculadora(op1, op, op2);
+		request.setAttribute("cal", cal);
 		request.getRequestDispatcher("/calculadora/index.jsp").forward(request, response);
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
