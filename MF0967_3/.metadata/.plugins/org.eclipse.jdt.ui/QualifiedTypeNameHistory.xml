@@ -22,4 +22,6 @@
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.modelos.Producto"/>
 <fullyQualifiedTypeName name="java.math.BigDecimal"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.negocio.LogicaNegocio"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.modelos.Calculadora"/>
 </qualifiedTypeNameHistroy>

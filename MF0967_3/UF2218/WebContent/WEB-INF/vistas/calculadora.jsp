@@ -11,7 +11,7 @@
 </style>
 </head>
 <body>
-	<form action="calcular" method="post">
+	<form action="calcular" method="get">
 		<input type="number" name="op1" value="${cal.op1}"/>
 		<span class="error">${cal.errorOp1}</span>
 		<select name="op">
