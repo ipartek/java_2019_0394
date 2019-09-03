@@ -5,7 +5,7 @@
 
 	<c:forEach items="${libros}" var="libro">
 		<article class="col-sm-4">
-			<img src="imgs/${libro.imagen}" class="mx-auto d-block" />
+			<img height="158" width="110" src='${not empty libro.imagen ? "imgs/".concat(libro.imagen) : "https://dummyimage.com/110x158/aaa/000.png&text=No+hay+imagen"}' class="mx-auto d-block" />
 			<div class="informacion-producto">
 				<div class="d-flex">
 					<p class="descripcion flex-grow-1">${libro.descripcion}</p>
@@ -13,7 +13,7 @@
 						<i class="fas fa-heart"></i><i class="far fa-heart"></i>
 					</p>
 				</div>
-				<p class="autor">${libro.autor}</p>
+				<p class="autor">${not empty libro.autor ? libro.autor : "Anónimo"}</p>
 				<p class="precios">
 					<span class="precio-con-descuento">
 						<fmt:formatNumber type = "number" 

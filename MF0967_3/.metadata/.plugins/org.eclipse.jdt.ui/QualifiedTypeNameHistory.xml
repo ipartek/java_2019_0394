@@ -3,8 +3,6 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejemplos.poo.Punto.Formatos"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
-<fullyQualifiedTypeName name="java.lang.Iterable"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.LibrosDAOColeccion"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2216.ejercicios.global.accesodatos.Crudable"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
@@ -24,4 +22,8 @@
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.negocio.LogicaNegocio"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="com.ipartek.formacion.uf2218.modelos.Calculadora"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.mf0967_3.servicios.LibrosServicio"/>
+<fullyQualifiedTypeName name="com.ipartek.formacion.mf0967_3.servicios.LibrosServicioImpl"/>
 </qualifiedTypeNameHistroy>

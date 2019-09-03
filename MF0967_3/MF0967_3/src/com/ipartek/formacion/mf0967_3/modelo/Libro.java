@@ -6,19 +6,54 @@ public class Libro {
 	private Long id;
 	private String imagen, descripcion, autor;
 	private BigDecimal precio, descuento;
-	public Libro(Long id, String imagen, String descripcion, String autor, BigDecimal precio, BigDecimal descuento) {
-		super();
-		this.id = id;
-		this.imagen = imagen;
-		this.descripcion = descripcion;
-		this.autor = autor;
-		this.precio = precio;
-		this.descuento = descuento;
+	
+	private String errorId, errorDescripcion, errorPrecio, errorDescuento;
+	private boolean error = false;
+	
+	public Libro(String id, String imagen, String descripcion, String autor, String precio, String descuento) {
+		try {
+			Long l = Long.parseLong(id);
+			setId(l);
+		} catch (NumberFormatException e) {
+			setErrorId("El id DEBE ser un número");
+		}
+		
+		setImagen(imagen);
+		setDescripcion(descripcion);
+		setAutor(autor);
+		
+		try {
+			BigDecimal p = new BigDecimal(precio);
+			setPrecio(p);
+		} catch (Exception e) {
+			setErrorPrecio("El precio debe ser un número");
+		}
+
+		try {
+			BigDecimal d = new BigDecimal(descuento).divide(new BigDecimal(100));
+			setDescuento(d);
+		} catch (Exception e) {
+			setErrorDescuento("El descuento debe ser un número");
+		}
 	}
+	
+	public Libro(Long id, String imagen, String descripcion, String autor, BigDecimal precio, BigDecimal descuento) {
+		setId(id);
+		setImagen(imagen);
+		setDescripcion(descripcion);
+		setAutor(autor);
+		setPrecio(precio);
+		setDescuento(descuento);
+	}
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
+		if(id != null && id < 0) {
+			setErrorId("El Id debe ser positivo");
+		}
+		
 		this.id = id;
 	}
 	public String getImagen() {
@@ -31,6 +66,9 @@ public class Libro {
 		return descripcion;
 	}
 	public void setDescripcion(String descripcion) {
+		if(descripcion == null || descripcion.trim().length() == 0) {
+			setErrorDescripcion("No se admiten descripciones vacías");
+		}
 		this.descripcion = descripcion;
 	}
 	public String getAutor() {
@@ -43,18 +81,69 @@ public class Libro {
 		return precio;
 	}
 	public void setPrecio(BigDecimal precio) {
+		if(precio == null || precio.doubleValue() < 0) {
+			setErrorPrecio("El precio debe ser positivo");
+		}
 		this.precio = precio;
 	}
 	public BigDecimal getDescuento() {
 		return descuento;
 	}
 	public void setDescuento(BigDecimal descuento) {
+		if(new BigDecimal(0).compareTo(descuento) >= 0) {
+			setErrorDescuento("Sólo se admiten descuentos positivos o 0");
+		}
 		this.descuento = descuento;
 	}
 	
 	public BigDecimal getPrecioConDescuento() {
 		return precio.multiply(new BigDecimal(1).subtract(descuento));
 	}
+	
+	public boolean isError() {
+		return error;
+	}
+
+	private void setError(boolean error) {
+		this.error = error;
+	}
+
+	public String getErrorId() {
+		return errorId;
+	}
+
+	public void setErrorId(String errorId) {
+		setError(true);
+		this.errorId = errorId;
+	}
+
+	public String getErrorDescripcion() {
+		return errorDescripcion;
+	}
+
+	public void setErrorDescripcion(String errorDescripcion) {
+		setError(true);
+		this.errorDescripcion = errorDescripcion;
+	}
+
+	public String getErrorPrecio() {
+		return errorPrecio;
+	}
+
+	public void setErrorPrecio(String errorPrecio) {
+		setError(true);
+		this.errorPrecio = errorPrecio;
+	}
+
+	public String getErrorDescuento() {
+		return errorDescuento;
+	}
+
+	public void setErrorDescuento(String errorDescuento) {
+		setError(true);
+		this.errorDescuento = errorDescuento;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

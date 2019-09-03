@@ -1,7 +1,6 @@
 package com.ipartek.formacion.mf0967_3.controladores;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +22,7 @@ public class LibroProcesarServlet extends HttpServlet {
 		String op = request.getParameter("op");
 		
 		if(op == null) {
-			request.getRequestDispatcher("/admin/listado").forward(request, response);
+			irAListado(request, response);
 			return;
 		}
 		
@@ -38,22 +37,42 @@ public class LibroProcesarServlet extends HttpServlet {
 			librosServicio.deleteLibro(Long.parseLong(id));
 			break;
 		case "modificar":
-			libro = crearLibro(request);
+			libro = crearLibro(request, response);
+			if(libro.isError()) {
+				irAMostrarLibro(request, response, libro);
+				return;
+			}
 			librosServicio.updateLibro(libro);
 			break;
 		case "alta":
-			libro = crearLibro(request);
+			libro = crearLibro(request, response);
+			if(libro.isError()) {
+				irAMostrarLibro(request, response, libro);
+				return;
+			}
 			librosServicio.insertLibro(libro);
 			break;
 		default:
-			request.getRequestDispatcher("/admin/listado").forward(request, response);
+			irAListado(request, response);
 			return;
 		}
 		
-		request.getRequestDispatcher("/admin/listado").forward(request, response);
+		irAListado(request, response);
 	}
 
-	private Libro crearLibro(HttpServletRequest request) {
+	private void irAMostrarLibro(HttpServletRequest request, HttpServletResponse response, Libro libro)
+			throws ServletException, IOException {
+		request.setAttribute("libro", libro);
+		request.setAttribute("op", libro.getId() == 0 ? "alta" : "modificar");
+		request.getRequestDispatcher("/WEB-INF/vistas/libro.jsp").forward(request, response);
+	}
+
+	private void irAListado(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		//request.getRequestDispatcher("/admin/listado").forward(request, response);
+		response.sendRedirect(request.getContextPath() + "/admin/listado");
+	}
+
+	private Libro crearLibro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String imagen = request.getParameter("imagen");
 		String descripcion = request.getParameter("descripcion");
@@ -66,12 +85,13 @@ public class LibroProcesarServlet extends HttpServlet {
 		}
 		
 		Libro libro = new Libro(
-				Long.parseLong(id),
+				id,
 				imagen,
 				descripcion,
 				autor,
-				new BigDecimal(precio),
-				new BigDecimal(descuento).divide(new BigDecimal(100)));
+				precio,
+				descuento);
+		
 		return libro;
 	}
 

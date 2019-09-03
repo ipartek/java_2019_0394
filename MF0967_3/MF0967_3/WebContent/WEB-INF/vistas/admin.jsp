@@ -11,7 +11,7 @@
 			<th>Precio</th>
 			<th>Descuento</th>
 			<th>Precio con descuento</th>
-			<th>Opciones</th>
+			<th><a class="btn btn-primary" href="admin/libro">Añadir</a></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,17 +31,5 @@
 		</c:forEach>
 	</tbody>
 
-	<tfoot>
-		<tr>
-			<td />
-			<td />
-			<td />
-			<td />
-			<td />
-			<td />
-			<td />
-			<td><a class="btn btn-primary" href="admin/libro">Añadir</a></td>
-		</tr>
-	</tfoot>
 </table>
 <%@ include file="/WEB-INF/includes/pie.jsp"%>
