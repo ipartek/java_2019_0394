@@ -35,16 +35,35 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" href="admin/listado">Admin</a></li>
 			</ul>
+			<ul class="navbar-nav">
+				<c:choose>
+					<c:when test="${sessionScope.login != null}">
+						<li class="nav-item"><span class="navbar-text">${login.email}</span>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="logout">Logout</a>
+						</li>
+					</c:when>
+					<c:otherwise>
+						<li class="nav-item"><a class="nav-link" href="login">Login</a>
+						</li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
 		</div>
 	</nav>
-	<c:if test="${libro.error}">
-		<div class="alert alert-danger alert-dismissible fade show"
+	<c:if test="${not empty mensaje}">
+		<div class="alert alert-${tipomensaje} alert-dismissible fade show"
 			role="alert">
-			Ha habido un error en el libro ${libro.errorId}
+			${mensaje}
 			<button type="button" class="close" data-dismiss="alert"
 				aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
+
+		<%
+			session.removeAttribute("mensaje");
+				session.removeAttribute("tipomensaje");
+		%>
 	</c:if>
 	<main class="container">

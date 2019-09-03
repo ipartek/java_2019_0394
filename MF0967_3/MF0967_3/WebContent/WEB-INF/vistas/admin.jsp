@@ -25,8 +25,14 @@
 				<td>${libro.descuento * 100}%</td>
 				<td><fmt:formatNumber type = "number" 
          					pattern = "0.00" value = "${libro.precioConDescuento}" />€</td>
-				<td><a class="btn btn-primary" href="admin/libro?id=${libro.id}">Modificar</a> <a
-					onclick="return confirm('¿Estás seguro de que quieres borrar el registro cuyo id es ${libro.id}?')" class="btn btn-danger" href="admin/libroprocesar?op=borrar&id=${libro.id}">Borrar</a></td>
+				<td><a class="btn btn-primary" href="admin/libro?id=${libro.id}">Modificar</a> 
+					<%--<a onclick="return confirm('¿Estás seguro de que quieres borrar el registro cuyo id es ${libro.id}?')" class="btn btn-danger" href="admin/libroprocesar?op=borrar&id=${libro.id}">Borrar</a>--%>
+					<form style="display: inline" method="post" action="admin/libroprocesar" onsubmit="return confirm('¿Estás seguro de que quieres borrar el registro cuyo id es ${libro.id}?')">
+						<button class="btn btn-danger">Borrar</button>
+						<input type="hidden" name="id" value="${libro.id}" />
+						<input type="hidden" name="op" value="borrar" />
+					</form>
+				</td>
 			</tr>
 		</c:forEach>
 	</tbody>

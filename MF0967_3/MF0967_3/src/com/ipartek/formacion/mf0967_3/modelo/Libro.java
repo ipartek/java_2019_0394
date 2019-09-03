@@ -90,8 +90,8 @@ public class Libro {
 		return descuento;
 	}
 	public void setDescuento(BigDecimal descuento) {
-		if(new BigDecimal(0).compareTo(descuento) >= 0) {
-			setErrorDescuento("Sólo se admiten descuentos positivos o 0");
+		if(descuento == null || descuento.compareTo(new BigDecimal(0)) < 0 || descuento.compareTo(new BigDecimal(1)) > 0) {
+			setErrorDescuento("Sólo se admiten descuentos positivos o 0 hasta el 100%");
 		}
 		this.descuento = descuento;
 	}

@@ -15,14 +15,20 @@ import com.ipartek.formacion.mf0967_3.servicios.LibrosServicioImpl;
 @WebServlet("/admin/libroprocesar")
 public class LibroProcesarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    
+	private HttpServletRequest request;
+	private HttpServletResponse response;
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		this.request = request;
+		this.response = response;
+		
 		request.setCharacterEncoding("utf8");
 		
 		String op = request.getParameter("op");
 		
 		if(op == null) {
-			irAListado(request, response);
+			irAListado();
 			return;
 		}
 		
@@ -35,44 +41,54 @@ public class LibroProcesarServlet extends HttpServlet {
 		case "borrar":
 			id = request.getParameter("id");
 			librosServicio.deleteLibro(Long.parseLong(id));
+			crearAlerta("Libro borrado correctamente", "success");
 			break;
 		case "modificar":
-			libro = crearLibro(request, response);
+			libro = crearLibro();
 			if(libro.isError()) {
-				irAMostrarLibro(request, response, libro);
+				irAMostrarLibro(libro);
 				return;
 			}
 			librosServicio.updateLibro(libro);
+			crearAlerta("Libro modificado correctamente", "success");
 			break;
 		case "alta":
-			libro = crearLibro(request, response);
+			libro = crearLibro();
 			if(libro.isError()) {
-				irAMostrarLibro(request, response, libro);
+				irAMostrarLibro(libro);
 				return;
 			}
 			librosServicio.insertLibro(libro);
+			crearAlerta("Libro añadido correctamente", "success");
 			break;
 		default:
-			irAListado(request, response);
+			crearAlerta("Operación no reconocida", "danger");
+			irAListado();
 			return;
 		}
 		
-		irAListado(request, response);
+		irAListado();
 	}
 
-	private void irAMostrarLibro(HttpServletRequest request, HttpServletResponse response, Libro libro)
+	private void irAMostrarLibro(Libro libro)
 			throws ServletException, IOException {
 		request.setAttribute("libro", libro);
 		request.setAttribute("op", libro.getId() == 0 ? "alta" : "modificar");
+		crearAlerta("Error en los datos del libro", "danger");
 		request.getRequestDispatcher("/WEB-INF/vistas/libro.jsp").forward(request, response);
 	}
 
-	private void irAListado(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void irAListado() throws IOException {
 		//request.getRequestDispatcher("/admin/listado").forward(request, response);
 		response.sendRedirect(request.getContextPath() + "/admin/listado");
 	}
 
-	private Libro crearLibro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void crearAlerta(String texto, String tipo) {
+		request.getSession().setAttribute("mensaje", texto);
+		request.getSession().setAttribute("tipomensaje", tipo);
+	}
+
+	private Libro crearLibro() throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String imagen = request.getParameter("imagen");
 		String descripcion = request.getParameter("descripcion");
@@ -93,10 +109,6 @@ public class LibroProcesarServlet extends HttpServlet {
 				descuento);
 		
 		return libro;
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }
