@@ -13,9 +13,11 @@ public class EjemploJDBC {
 			// Class.forName("com.mysql.cj.jdbc.Driver");
 			// new com.mysql.cj.jdbc.Driver();
 
-			String uri = "jdbc:mysql://localhost:3307/libreria?serverTimezone=UTC";
+			String usuario = "root";
+			String password = "";
+			String uri = "jdbc:mysql://localhost/libreria?serverTimezone=UTC";
 
-			try (Connection con = DriverManager.getConnection(uri, "root", "admin")) {
+			try (Connection con = DriverManager.getConnection(uri, usuario, password)) {
 
 				System.out.println("Conectado");
 
