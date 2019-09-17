@@ -1,0 +1,1 @@
+SELECT CONCAT('Hola ', 'Javier', ' qué tal estás');
