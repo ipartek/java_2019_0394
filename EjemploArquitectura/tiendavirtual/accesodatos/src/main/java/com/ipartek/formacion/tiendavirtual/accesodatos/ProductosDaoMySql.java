@@ -17,36 +17,36 @@ public class ProductosDaoMySql implements Dao<Long, Producto> {
 		String url = "jdbc:mysql://localhost:3306/tiendavirtual?serverTimezone=UTC";
 		String user = "root";
 		String password = "";
-		
+
 		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			return DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			throw new AccesoDatosException("Ha habido un error al conectar a la base de datos", e);
+		} catch (ClassNotFoundException e) {
+			throw new AccesoDatosException("No se ha encontrado el driver de JDBC de MySQL", e);
 		}
 	}
-	
+
 	@Override
 	public Iterable<Producto> getAll() {
-		try(Connection con = getConnection()) {
-			try(CallableStatement cs = con.prepareCall(PRODUCTOS_GET_ALL)) {
+		try (Connection con = getConnection()) {
+			try (CallableStatement cs = con.prepareCall(PRODUCTOS_GET_ALL)) {
 				ResultSet rs = cs.executeQuery();
-				
+
 				ArrayList<Producto> productos = new ArrayList<>();
-				
+
 				Producto producto;
-				
-				while(rs.next()) {
-					producto = new Producto(
-							rs.getLong("id"), 
-							rs.getString("nombre"), 
-							rs.getString("descripcion"),
+
+				while (rs.next()) {
+					producto = new Producto(rs.getLong("id"), rs.getString("nombre"), rs.getString("descripcion"),
 							rs.getBigDecimal("precio"));
-					
+
 					productos.add(producto);
 				}
-				
+
 				return productos;
-				
+
 			} catch (SQLException e) {
 				throw new AccesoDatosException("No se ha podido llamar al procedimiento " + PRODUCTOS_GET_ALL);
 			}
