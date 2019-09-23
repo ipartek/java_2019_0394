@@ -1,5 +1,6 @@
 package com.ipartek.formacion.tiendavirtual.servicios;
 
+import com.ipartek.formacion.tiendavirtual.accesodatos.AccesoDatosException;
 import com.ipartek.formacion.tiendavirtual.accesodatos.Dao;
 import com.ipartek.formacion.tiendavirtual.accesodatos.ProductosDaoMySql;
 import com.ipartek.formacion.tiendavirtual.modelos.Producto;
@@ -8,9 +9,13 @@ public class ProductosServicioImpl implements ProductoServicio {
 
 	@Override
 	public Iterable<Producto> getAll() {
-		Dao<Long, Producto> dao = new ProductosDaoMySql();
-		
-		return dao.getAll();
+		try {
+			Dao<Long, Producto> dao = new ProductosDaoMySql();
+			
+			return dao.getAll();
+		} catch (AccesoDatosException e) {
+			throw new ServiciosException("Ha habido un error al pedir el listado", e);
+		}
 	}
 
 	@Override

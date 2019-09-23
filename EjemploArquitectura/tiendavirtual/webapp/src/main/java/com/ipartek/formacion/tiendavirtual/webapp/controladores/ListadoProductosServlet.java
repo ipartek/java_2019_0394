@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ipartek.formacion.tiendavirtual.modelos.Mensaje;
 import com.ipartek.formacion.tiendavirtual.servicios.ProductoServicio;
 import com.ipartek.formacion.tiendavirtual.servicios.ProductosServicioImpl;
 
@@ -17,9 +18,17 @@ public class ListadoProductosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductoServicio servicio = new ProductosServicioImpl();
-		
-		request.setAttribute("productos", servicio.getAll());
+		try {
+			ProductoServicio servicio = new ProductosServicioImpl();
+			
+			request.setAttribute("productos", servicio.getAll());
+			
+			request.setAttribute("mensaje",	new Mensaje("info", "Se ha cargado la lista de productos"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			request.setAttribute("mensaje", new Mensaje("danger", "Ha habido un error al pedir los datos al servidor"));
+		}
 		
 		request.getRequestDispatcher(PRODUCTOS_JSP).forward(request, response);
 	}

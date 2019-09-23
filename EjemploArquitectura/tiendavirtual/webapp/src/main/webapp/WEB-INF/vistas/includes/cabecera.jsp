@@ -15,5 +15,19 @@
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
-<body class="container">
-	<!-- Fin de cabecera -->
+<body>
+	<header>
+		<c:if test="${mensaje != null}">
+			<div
+				class="alert alert-${mensaje.severidad} alert-dismissible fade show"
+				role="alert">
+				<fmt:formatDate pattern="dd-MM-yyyy hh:mm:ss" value="${mensaje.fecha}" />
+				<strong>${mensaje.texto}</strong>
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		</c:if>
+	</header>
+	<main class="container"> <!-- Fin de cabecera -->
