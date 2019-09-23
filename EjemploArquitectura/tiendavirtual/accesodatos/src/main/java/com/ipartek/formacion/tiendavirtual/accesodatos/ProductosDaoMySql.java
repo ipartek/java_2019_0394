@@ -10,16 +10,36 @@ import java.util.ArrayList;
 import com.ipartek.formacion.tiendavirtual.modelos.Producto;
 
 public class ProductosDaoMySql implements Dao<Long, Producto> {
-
 	private static final String PRODUCTOS_GET_ALL = "{ call productos_getAll() }";
+	private static final String PRODUCTOS_INSERT = "{ call productos_insert(?,?,?,?) }";
+	
+	public String url, user, password, driver;
+	
+	private static ProductosDaoMySql instancia;
+	
+	public static ProductosDaoMySql crearInstancia(String driver, String url, String user, String password) {
+		return instancia = new ProductosDaoMySql(driver, url, user, password);
+	}
+	
+	public static ProductosDaoMySql getInstancia() {
+		if(instancia == null) {
+			throw new AccesoDatosException("Se debe crear la instancia con crearInstancia y los datos de configuración");
+		}
+		return instancia;
+	}
+	
+	private ProductosDaoMySql(String driver, String url, String user, String password) {
+		
+		this.url = url;
+		this.user = user;
+		this.password = password;
+		this.driver = driver;
+	}
 
 	private Connection getConnection() {
-		String url = "jdbc:mysql://localhost:3306/tiendavirtual?serverTimezone=UTC";
-		String user = "root";
-		String password = "";
-
+		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName(driver);
 			return DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			throw new AccesoDatosException("Ha habido un error al conectar a la base de datos", e);
@@ -61,8 +81,27 @@ public class ProductosDaoMySql implements Dao<Long, Producto> {
 	}
 
 	@Override
-	public Producto insert(Producto objeto) {
-		throw new UnsupportedOperationException("Método no implementado");
+	public Producto insert(Producto producto) {
+		try (Connection con = getConnection()) {
+			try (CallableStatement cs = con.prepareCall(PRODUCTOS_INSERT)) {
+				cs.setString(1, producto.getNombre());
+				cs.setString(2, producto.getDescripcion());
+				cs.setBigDecimal(3, producto.getPrecio());
+				
+				cs.registerOutParameter(4, java.sql.Types.INTEGER);
+				
+				cs.executeUpdate();
+				
+				producto.setId(cs.getLong(4));
+				
+				return producto;
+
+			} catch (SQLException e) {
+				throw new AccesoDatosException("No se ha podido llamar al procedimiento " + PRODUCTOS_GET_ALL);
+			}
+		} catch (SQLException e) {
+			throw new AccesoDatosException("Ha habido un error al cerrar la conexión a la base de datos", e);
+		}
 	}
 
 	@Override

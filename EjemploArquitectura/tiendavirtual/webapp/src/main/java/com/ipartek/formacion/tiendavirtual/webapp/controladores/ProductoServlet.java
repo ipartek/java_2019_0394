@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.tiendavirtual.modelos.Mensaje;
 import com.ipartek.formacion.tiendavirtual.modelos.Producto;
-import com.ipartek.formacion.tiendavirtual.servicios.ProductosServicioImpl;
+import com.ipartek.formacion.tiendavirtual.servicios.ProductoServicio;
 
 @WebServlet("/producto")
 public class ProductoServlet extends HttpServlet {
@@ -34,9 +34,9 @@ public class ProductoServlet extends HttpServlet {
 			if (producto.isError()) {
 				request.setAttribute("producto", producto);
 			} else {
-				ProductosServicioImpl.getInstancia().insert(producto);
+				producto = ((ProductoServicio) getServletContext().getAttribute("servicioProductos")).insert(producto);
 				
-				request.setAttribute("mensaje", new Mensaje("success", "Registro insertado correctamente"));
+				request.setAttribute("mensaje", new Mensaje("success", "Registro insertado correctamente con el id " + producto.getId()));
 				request.getRequestDispatcher("/productos").forward(request, response);
 				
 				return;

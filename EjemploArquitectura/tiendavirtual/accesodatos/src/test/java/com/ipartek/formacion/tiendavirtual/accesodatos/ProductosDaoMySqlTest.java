@@ -13,7 +13,8 @@ public class ProductosDaoMySqlTest {
 
 	@Test
 	public void getAll() {
-		Dao<Long, Producto> dao = new ProductosDaoMySql();
+		String rutaConfiguracion = ProductosDaoMySqlTest.class.getClassLoader().getResource("configuracionTest.properties").toString().replace("%20", " ").replace("file:", "");
+		Dao<Long, Producto> dao = FabricaDao.crearInstancia(rutaConfiguracion).getDaoProducto();
 		
 		ArrayList<Producto> productos = (ArrayList<Producto>) dao.getAll();
 		

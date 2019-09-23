@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.tiendavirtual.modelos.Mensaje;
 import com.ipartek.formacion.tiendavirtual.servicios.ProductoServicio;
-import com.ipartek.formacion.tiendavirtual.servicios.ProductosServicioImpl;
 
 @WebServlet("/productos")
 public class ProductosServlet extends HttpServlet {
@@ -19,7 +18,7 @@ public class ProductosServlet extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			ProductoServicio servicio = ProductosServicioImpl.getInstancia();
+			ProductoServicio servicio = (ProductoServicio) getServletContext().getAttribute("servicioProductos"); //ProductosServicioImpl.getInstancia();
 			
 			request.setAttribute("productos", servicio.getAll());
 			
