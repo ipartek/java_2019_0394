@@ -19,11 +19,11 @@ public class ProductosServlet extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			ProductoServicio servicio = new ProductosServicioImpl();
+			ProductoServicio servicio = ProductosServicioImpl.getInstancia();
 			
 			request.setAttribute("productos", servicio.getAll());
 			
-			request.setAttribute("mensaje",	new Mensaje("info", "Se ha cargado la lista de productos"));
+			//request.setAttribute("mensaje",	new Mensaje("info", "Se ha cargado la lista de productos"));
 		} catch (Exception e) {
 			e.printStackTrace();
 			

@@ -7,6 +7,15 @@ import com.ipartek.formacion.tiendavirtual.modelos.Producto;
 
 public class ProductosServicioImpl implements ProductoServicio {
 
+	private static ProductosServicioImpl instancia = new ProductosServicioImpl();
+	
+	public static ProductosServicioImpl getInstancia() {
+		return instancia;
+	}
+	
+	private ProductosServicioImpl() {
+	}
+	
 	@Override
 	public Iterable<Producto> getAll() {
 		try {
