@@ -13,7 +13,7 @@ import com.ipartek.formacion.tiendavirtual.servicios.ProductoServicio;
 import com.ipartek.formacion.tiendavirtual.servicios.ProductosServicioImpl;
 
 @WebServlet("/productos")
-public class ListadoProductosServlet extends HttpServlet {
+public class ProductosServlet extends HttpServlet {
 	private static final String PRODUCTOS_JSP = "/WEB-INF/vistas/productos.jsp";
 	private static final long serialVersionUID = 1L;
     

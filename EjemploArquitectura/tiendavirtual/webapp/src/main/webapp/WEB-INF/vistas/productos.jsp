@@ -23,4 +23,6 @@
 	</tbody>
 </table>
 
+<a href="producto" class="btn btn-primary">Añadir producto</a>
+
 <%@ include file="/WEB-INF/vistas/includes/pie.jsp"%>
