@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/vistas/includes/cabecera.jsp"%>
+<%@ include file="/WEB-INF/vistas/includes/cabecera.jspf"%>
 
 <table class="table">
 	<thead>
@@ -25,4 +25,4 @@
 
 <a href="producto" class="btn btn-primary">Añadir producto</a>
 
-<%@ include file="/WEB-INF/vistas/includes/pie.jsp"%>
+<%@ include file="/WEB-INF/vistas/includes/pie.jspf"%>
