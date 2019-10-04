@@ -31,7 +31,7 @@ public class RestServlet extends HttpServlet {
 		Long id = leerId(request);
 
 		if (id == null) {
-			response.getWriter().write(gson.toJson(alumnos.values()));
+			response.getWriter().write(gson.toJson(alumnos.values().toArray()));
 		} else if (id == -1) {
 			noEncontrado(response);
 		} else {
