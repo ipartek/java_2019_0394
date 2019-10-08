@@ -26,7 +26,13 @@ public class ControladorRest {
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/api/personas/{id}")
 	public Persona getById(@PathVariable("id") Long id) {
-		return personas.get(id);
+		Persona persona = personas.get(id);
+		
+		if(persona == null) {
+			throw new NotFoundException("No se ha encontrado la persona con id " + id);
+		}
+		
+		return persona;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, path = "/api/personas")
