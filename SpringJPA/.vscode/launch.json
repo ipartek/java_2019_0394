@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AccessingDataJpaApplication<accessing-data-jpa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.accessingdatajpa.AccessingDataJpaApplication",
+            "projectName": "accessing-data-jpa",
+            "args": ""
+        }
+    ]
+}
