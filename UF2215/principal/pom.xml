@@ -13,6 +13,7 @@
 		<module>servicios</module>
 		<module>webapp</module>
     <module>accesodatos</module>
+    <module>consola</module>
   </modules>
 
 	<properties>

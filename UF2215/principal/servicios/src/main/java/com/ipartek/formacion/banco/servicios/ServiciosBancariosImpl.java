@@ -1,7 +1,12 @@
 package com.ipartek.formacion.banco.servicios;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.math.BigDecimal;
 
+import com.ipartek.formacion.banco.accesodatos.AccesoDatosException;
 import com.ipartek.formacion.banco.accesodatos.BancoDAOMySQL;
 import com.ipartek.formacion.banco.entidades.Cuenta;
 import com.ipartek.formacion.banco.entidades.Importe;
@@ -28,7 +33,12 @@ public class ServiciosBancariosImpl implements ServiciosBancarios {
 			throw new ServiciosBancariosException("No se puede hacer una operación de importe negativo");
 		}
 		
-		Importe importe = new Importe(ingreso ? cantidad : cantidad.multiply(new BigDecimal(-1)), divisa);
+		crearMovimientoEnCuenta(idCuenta, concepto, ingreso ? cantidad : cantidad.multiply(new BigDecimal(-1)), divisa);
+	}
+	
+	private void crearMovimientoEnCuenta(Long idCuenta, String concepto, BigDecimal cantidad, String divisa) {
+		
+		Importe importe = new Importe(cantidad, divisa);
 		
 		Cuenta cuenta = new Cuenta(idCuenta, null, null, null);
 		
@@ -48,6 +58,39 @@ public class ServiciosBancariosImpl implements ServiciosBancarios {
 		
 		crearMovimientoEnCuenta(REINTEGRO, idCuentaOrigen, conceptoOrigen, cantidad, divisa);
 		crearMovimientoEnCuenta(INGRESO, idCuentaDestino, conceptoDestino, cantidad, divisa);
+	}
+
+	@Override
+	public void importarCSV(String rutaFicheroCSV) {
+		try (FileReader fr = new FileReader(rutaFicheroCSV)) {
+			try(BufferedReader br = new BufferedReader(fr)) {
+				
+				String linea = null;
+				
+				if(br.readLine() == null) {
+					throw new AccesoDatosException("No se ha encontrado ninguna línea en el fichero");
+				}
+				
+				while( (linea = br.readLine()) != null) {
+					String[] datos = linea.split(";");
+					
+					System.out.printf("%s, %s, %s, %s, %s", datos[0], datos[1], datos[2], datos[3], datos[4]);
+					
+					Long id = Long.parseLong(datos[1]);
+					String concepto = datos[2];
+					BigDecimal cantidad = new BigDecimal(datos[3].replace(',', '.'));
+					String divisa = datos[4];
+					
+					System.out.printf(" -> %s, %s, %s, %s\n", id, concepto, cantidad, divisa);
+					
+					crearMovimientoEnCuenta(id, concepto, cantidad, divisa);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			throw new AccesoDatosException("No se ha encontrado el fichero", e);
+		} catch (IOException e) {
+			throw new AccesoDatosException("No se ha podido abrir el fichero", e);
+		}
 	}
 
 }

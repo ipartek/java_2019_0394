@@ -1,0 +1,16 @@
+﻿Id;Cuenta;Concepto;Cantidad;Divisa
+1;1;Concepto 1;100;EUR
+2;2;Concepto 2;200;EUR
+3;1;Concepto 3;300;EUR
+4;1;Concepto 4;400;EUR
+5;1;Concepto 5;500;EUR
+6;2;Concepto 6;600;EUR
+7;2;Concepto 7;700;EUR
+8;2;Concepto 8;800,55;EUR
+9;1;Concepto 9;900,3;EUR
+10;2;Concepto 10;1000;EUR
+11;2;Concepto 11;1100;EUR
+12;1;Concepto 12;-1200;EUR
+13;1;Concepto 13;1300;EUR
+14;1;Concepto 14;1400;EUR
+15;2;Concepto 15;1500;EUR

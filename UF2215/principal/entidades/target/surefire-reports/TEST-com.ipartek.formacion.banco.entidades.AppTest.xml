@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ipartek.formacion.banco.entidades.AppTest" time="0.055" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ipartek.formacion.banco.entidades.AppTest" time="0.019" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -7,7 +7,7 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\test-classes;C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\classes;C:\Users\JavierLete\.m2\repository\org\projectlombok\lombok\1.18.10\lombok-1.18.10.jar;C:\Users\JavierLete\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\JavierLete\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\test-classes;C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\classes;C:\Users\JavierLete\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\JavierLete\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\JavierLete\.m2\repository\org\projectlombok\lombok\1.18.10\lombok-1.18.10.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -18,8 +18,8 @@
     <property name="user.country" value="ES"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_221\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\JAVIER~1\AppData\Local\Temp\surefire8460432390333970288\surefirebooter6607378604687010216.jar C:\Users\JavierLete\AppData\Local\Temp\surefire8460432390333970288 2019-10-15T12-43-42_075-jvmRun1 surefire2826665470298671220tmp surefire_01105632416207487129tmp"/>
-    <property name="surefire.test.class.path" value="C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\test-classes;C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\classes;C:\Users\JavierLete\.m2\repository\org\projectlombok\lombok\1.18.10\lombok-1.18.10.jar;C:\Users\JavierLete\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\JavierLete\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.java.command" value="C:\Users\JAVIER~1\AppData\Local\Temp\surefire9138912922658443781\surefirebooter6135739228689655350.jar C:\Users\JavierLete\AppData\Local\Temp\surefire9138912922658443781 2019-10-16T12-12-23_690-jvmRun1 surefire1441758212059105488tmp surefire_02924710083951457199tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\test-classes;C:\Users\JavierLete\OneDrive - Eskura21 SL\Documentos\GIT\java_2019_0394\UF2215\principal\entidades\target\classes;C:\Users\JavierLete\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\JavierLete\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\JavierLete\.m2\repository\org\projectlombok\lombok\1.18.10\lombok-1.18.10.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\JavierLete"/>
     <property name="user.language" value="es"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\JAVIER~1\AppData\Local\Temp\surefire8460432390333970288\surefirebooter6607378604687010216.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\JAVIER~1\AppData\Local\Temp\surefire9138912922658443781\surefirebooter6135739228689655350.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_221\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_221\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_221\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.ipartek.formacion.banco.entidades.AppTest" time="0.004"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.ipartek.formacion.banco.entidades.AppTest" time="0.001"/>
 </testsuite>

@@ -9,4 +9,6 @@ public interface ServiciosBancarios {
 	void reintegro(Long idCuenta, String concepto, BigDecimal cantidad, String divisa);
 	Iterable<Movimiento> listarMovimientos(Long id);
 	void transferencia(Long idCuentaOrigen, Long idCuentaDestino, String conceptoOrigen, String conceptoDestino, BigDecimal cantidad, String divisa);
+	
+	void importarCSV(String rutaFicheroCSV);
 }
