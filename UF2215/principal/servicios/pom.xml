@@ -15,7 +15,7 @@
   <dependencies>
   	<dependency>
   		<groupId>com.ipartek.formacion.banco</groupId>
-  		<artifactId>entidades</artifactId>
+  		<artifactId>accesodatos</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>

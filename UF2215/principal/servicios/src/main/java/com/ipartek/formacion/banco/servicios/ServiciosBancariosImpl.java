@@ -1,45 +1,16 @@
 package com.ipartek.formacion.banco.servicios;
 
 import java.math.BigDecimal;
-import java.util.TreeMap;
 
+import com.ipartek.formacion.banco.accesodatos.BancoDAOMySQL;
 import com.ipartek.formacion.banco.entidades.Cuenta;
 import com.ipartek.formacion.banco.entidades.Importe;
 import com.ipartek.formacion.banco.entidades.Movimiento;
-import com.ipartek.formacion.banco.entidades.Propietario;
 
 public class ServiciosBancariosImpl implements ServiciosBancarios {
 
 	private static final boolean REINTEGRO = false;
 	private static final boolean INGRESO = true;
-	private static TreeMap<Long, Cuenta> cuentas = new TreeMap<>();
-	private static TreeMap<Long, Movimiento> movimientos = new TreeMap<>();
-
-	static {
-		Propietario p1 = new Propietario(1L, "12345678Z", "Javier", "Lete");
-		Propietario p2 = new Propietario(2L, "87654321A", "Pepe", "Pérez");
-
-		Importe i1 = new Importe(new BigDecimal("123.45"), "EUR");
-		Importe i2 = new Importe(new BigDecimal("543.21"), "EUR");
-
-		Cuenta c1 = new Cuenta(1L, "1234", "5678", "12345678");
-		Cuenta c2 = new Cuenta(2L, "4321", "8765", "87654321");
-
-		c1.getPropietarios().put(1L, p1);
-		c2.getPropietarios().put(2L, p2);
-
-		Movimiento m1 = new Movimiento(1L, c1, "Ingreso inicial", i1);
-		Movimiento m2 = new Movimiento(2L, c2, "Ingreso inicial", i2);
-
-		c1.getMovimientos().put(m1.getId(), m1);
-		c2.getMovimientos().put(m2.getId(), m2);
-
-		movimientos.put(m1.getId(), m1);
-		movimientos.put(m2.getId(), m2);
-		
-		cuentas.put(1L, c1);
-		cuentas.put(2L, c2);
-	}
 
 	@Override
 	public void ingreso(Long idCuenta, String concepto, BigDecimal cantidad, String divisa) {
@@ -57,24 +28,18 @@ public class ServiciosBancariosImpl implements ServiciosBancarios {
 			throw new ServiciosBancariosException("No se puede hacer una operación de importe negativo");
 		}
 		
-		if(!cuentas.containsKey(idCuenta)) {
-			throw new ServiciosBancariosException("No existe la cuenta " + idCuenta);
-		}
+		Importe importe = new Importe(ingreso ? cantidad : cantidad.multiply(new BigDecimal(-1)), divisa);
 		
-		Cuenta cuenta = cuentas.get(idCuenta);
+		Cuenta cuenta = new Cuenta(idCuenta, null, null, null);
 		
-		Long id = movimientos.lastKey() + 1;
+		Movimiento movimiento = new Movimiento(null, cuenta, concepto,  importe);
 		
-		Importe i = new Importe(ingreso ? cantidad : cantidad.multiply(new BigDecimal(-1)), divisa);
-		
-		Movimiento m = new Movimiento(id, cuenta, concepto,  i);
-		
-		cuenta.getMovimientos().put(m.getId(), m);
+		new BancoDAOMySQL().addMovimiento(movimiento);
 	}
 
 	@Override
 	public Iterable<Movimiento> listarMovimientos(Long id) {
-		return cuentas.get(id).getMovimientos().values();
+		return new BancoDAOMySQL().getMovimientos(id);
 	}
 
 	@Override
