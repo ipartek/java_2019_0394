@@ -1,0 +1,4 @@
+2019-10-16 13:53:13 INFORMACIÓN Inicio de la aplicación
+2019-10-16 13:53:14   DETALLADO INSERT INTO movimientos (cuentas_id, concepto, cantidad, divisa) VALUES (1, 'Transacción a 2', -200.5, 'EUR')
+2019-10-16 13:53:14   DETALLADO INSERT INTO movimientos (cuentas_id, concepto, cantidad, divisa) VALUES (6, 'Transacción desde 1', 200.5, 'EUR')
+2019-10-16 13:53:14       GRAVE Error en la operación
