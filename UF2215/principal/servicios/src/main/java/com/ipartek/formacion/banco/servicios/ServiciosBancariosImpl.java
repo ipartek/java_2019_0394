@@ -1,10 +1,12 @@
 package com.ipartek.formacion.banco.servicios;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
 
 import com.ipartek.formacion.banco.accesodatos.AccesoDatosException;
 import com.ipartek.formacion.banco.accesodatos.BancoDAOMySQL;
@@ -62,8 +64,8 @@ public class ServiciosBancariosImpl implements ServiciosBancarios {
 
 	@Override
 	public void importarCSV(String rutaFicheroCSV) {
-		try (FileReader fr = new FileReader(rutaFicheroCSV)) {
-			try(BufferedReader br = new BufferedReader(fr)) {
+		try (FileInputStream fis = new FileInputStream(rutaFicheroCSV)) {
+			try(BufferedReader br = new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8))) {
 				
 				String linea = null;
 				
