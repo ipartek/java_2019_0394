@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<gs-serving-web-content>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "hello.Application",
+            "projectName": "gs-serving-web-content",
+            "args": ""
+        }
+    ]
+}
