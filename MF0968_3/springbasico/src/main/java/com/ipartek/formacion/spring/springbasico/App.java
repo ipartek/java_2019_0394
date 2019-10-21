@@ -4,6 +4,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	MessageRenderer mr = MessageSupportFactory.getInstance().getMessageRenderer();
+    	MessageProvider mp = MessageSupportFactory.getInstance().getMessageProvider();
+    	
+    	mr.setMessageProvider(mp);
+    	
+    	mr.render();
     }
 }
