@@ -9,11 +9,9 @@ import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
 public class App {
 	public static void main(String[] args) throws Exception {
 		BeanFactory factory = getBeanFactory();
+		
 		MessageRenderer mr = (MessageRenderer) factory.getBean("renderer");
-		MessageProvider mp = (MessageProvider) factory.getBean("provider");
-
-		mr.setMessageProvider(mp);
-
+		
 		mr.render();
 	}
 
