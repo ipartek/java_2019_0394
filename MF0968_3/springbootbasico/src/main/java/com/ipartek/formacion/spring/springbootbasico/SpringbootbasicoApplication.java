@@ -1,6 +1,7 @@
 package com.ipartek.formacion.spring.springbootbasico;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringbootbasicoApplication implements CommandLineRunner {
 
 	@Autowired
-	private MessageRenderer renderer;
+	@Qualifier("beautiful")
+	private MessageRenderer beautifulRenderer;
+	
+	@Autowired
+	@Qualifier("simple")
+	private MessageRenderer simpleRenderer;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootbasicoApplication.class, args);
@@ -17,7 +23,8 @@ public class SpringbootbasicoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		renderer.render();
+		beautifulRenderer.render();
+		simpleRenderer.render();
 	}
 
 }

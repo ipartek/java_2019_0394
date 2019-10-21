@@ -1,5 +1,10 @@
 package com.ipartek.formacion.spring.springbootbasico;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Primary
+@Component("beautiful")
 public class BeautifulStandardOutMessageRenderer extends StandardOutMessageRenderer {
 
 	@Override
