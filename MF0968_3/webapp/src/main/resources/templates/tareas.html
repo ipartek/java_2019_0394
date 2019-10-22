@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado de tareas</title>
+</head>
+<body>
+
+<ul th:each="tarea: ${tareas}">
+	<li th:text="${tarea.descripcion}" />
+</ul>
+
+</body>
+</html>
