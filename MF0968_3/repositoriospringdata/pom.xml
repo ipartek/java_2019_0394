@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ipartek.formacion.springarquitectura</groupId>
-	<artifactId>webapp</artifactId>
+	<artifactId>repositoriospringdata</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>webapp</name>
-	<description>Capa web con Spring MVC</description>
+	<name>repositoriospringdata</name>
+	<description>Repositorio hecho con CrudRepository</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -21,19 +21,9 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -45,29 +35,17 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
 		<dependency>
-			<groupId>com.ipartek.formacion.springarquitectura</groupId>
-			<artifactId>servicio</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<!-- <dependency>
-			<groupId>com.ipartek.formacion.springarquitectura</groupId>
-			<artifactId>repositoriotreemap</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency> -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.ipartek.formacion.springarquitectura</groupId>
-			<artifactId>repositoriospringdata</artifactId>
+			<artifactId>repositorio</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 	</dependencies>
 

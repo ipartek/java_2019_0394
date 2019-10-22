@@ -10,7 +10,7 @@ import com.ipartek.formacion.springarquitectura.repositorio.TareaDao;
 
 @Named // @Service o @Component
 public class TareaService {
-	private Logger log = Logger.getLogger(TareaService.class.getName());
+	private Logger log = Logger.getLogger("TAREASERVICE");
 	
 	@Inject
 	private TareaDao dao;
