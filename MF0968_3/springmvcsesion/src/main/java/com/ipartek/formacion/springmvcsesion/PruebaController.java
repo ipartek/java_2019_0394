@@ -10,6 +10,7 @@ import org.jboss.logging.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
@@ -34,10 +35,11 @@ public class PruebaController {
 	}
 	
 	@GetMapping("/pruebasession")
+	@ResponseBody
 	public String pruebaSession(@ModelAttribute("textos") ArrayList<String> textos) {
 		textos.add("Nuevo");
 		log.info(textos);
 		log.info(textos.size());
-		return null;
+		return textos.toString();
 	}
 }
