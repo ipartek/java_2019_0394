@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hola Mundo</title>
+</head>
+<body>
+<h1>Hola <span th:text="${persona}">Colegas</span></h1>
+
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+
+<form method="post" th:object="${usuario}">
+	<input name="nombre" placeholder="Nombre" th:field="*{nombre}"/>
+	<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
+	<input name="email" placeholder="Email" th:field="*{email}"/>
+	<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+	<button>Aceptar</button>
+</form>
+
+
+<dl th:if="${usuario != null}">
+	<dt>Nombre</dt>
+	<dd th:text="${usuario.nombre}" />
+	<dt>Email</dt>
+	<dd th:text="${usuario.email}" />
+</dl>
+
+</body>
+</html>
