@@ -1,0 +1,8 @@
+<factorypath>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/ipartek/formacion/banco/servicios/0.0.1-SNAPSHOT/servicios-0.0.1-SNAPSHOT.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/ipartek/formacion/banco/accesodatos/0.0.1-SNAPSHOT/accesodatos-0.0.1-SNAPSHOT.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/ipartek/formacion/banco/entidades/0.0.1-SNAPSHOT/entidades-0.0.1-SNAPSHOT.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/mysql/mysql-connector-java/8.0.18/mysql-connector-java-8.0.18.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar" enabled="true" runInBatchMode="false"/>
+</factorypath>
