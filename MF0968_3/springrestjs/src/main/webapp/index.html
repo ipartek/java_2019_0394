@@ -3,13 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Cliente JS</title>
-<!-- <script src="js/jquery.min.js"></script> -->
+<script src="js/jquery.min.js"></script>
+<script>
+	$.noConflict();
+</script>
 <!-- <script src="js/cliente.js"></script> -->
-<!-- <script src="js/clientejquery.js"></script> -->
-<script src="js/clientees2018.js"></script>
+<script src="js/clientejquery.js"></script>
+<!-- <script src="js/clientees2018.js"></script> -->
 </head>
 <body>
 <h1>Cliente JS</h1>
+
+<form>
+	<input id="nombre" placeholder="Nombre" value="Teclado" />
+	<input id="descripcion" placeholder="Descripción" value="Teclado mecánico" />
+	<input type="number" step=".01" id="precio" placeholder="Precio" value="100"/>
+	<button>Aceptar</button>
+</form>
 
 <ul id="productos"></ul>
 </body>
