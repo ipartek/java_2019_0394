@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:layout="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
 	layout:decorate="~{fragments/main_layout}">
 <head>
 <title>Conferencia. Listado de ponentes</title>
@@ -7,46 +8,19 @@
 <body>
 
 	<div layout:fragment="content" class="container">
+<!-- 		<p th:text="${ponentes}">Aquí tiene que salir una depuración de ponentes</p> -->
 		<div class="card-group">
-			<div class="card">
+			<div class="card" th:each="ponente: ${ponentes}">
 				<img class="card-img-top"
-					src="http://lorempixel.com/500/500/people/1/Foto de ponente"
+					th:src="@{http://lorempixel.com/500/500/people/{id}/Foto de ponente(id=${ponente.id})}"
 					alt="Card image cap">
 				<div class="card-body">
-					<h5 class="card-title">Ponente</h5>
-					<p class="card-text">Rollo patatero de que el ponente mola
+					<h5 class="card-title" th:text="${ponente.nombre}">Ponente</h5>
+					<p class="card-text" th:text="${ponente.experiencia}">Rollo patatero de que el ponente mola
 						mogollón y bla...</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
 				</div>
 			</div>
-			<div class="card">
-				<img class="card-img-top"
-					src="http://lorempixel.com/500/500/people/2/Foto de ponente"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Ponente</h5>
-					<p class="card-text">Rollo patatero de que el ponente mola
-						mogollón y bla...</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
-				</div>
-			</div>
-			<div class="card">
-				<img class="card-img-top"
-					src="http://lorempixel.com/500/500/people/3/Foto de ponente"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Ponente</h5>
-					<p class="card-text">Rollo patatero de que el ponente mola
-						mogollón y bla...</p>
-					<p class="card-text">
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
-				</div>
-			</div>
+
 		</div>
 	</div>
 </body>
