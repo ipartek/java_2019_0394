@@ -1,4 +1,4 @@
-package com.ipartek.formacion.ejemplocompleto;
+package com.ipartek.formacion.ejemplocompleto.controladores;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
