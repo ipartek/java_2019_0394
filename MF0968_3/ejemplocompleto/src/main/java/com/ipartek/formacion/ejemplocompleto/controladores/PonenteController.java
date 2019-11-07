@@ -1,15 +1,18 @@
 package com.ipartek.formacion.ejemplocompleto.controladores;
 
-import java.util.ArrayList;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.ipartek.formacion.ejemplocompleto.entidades.Ponente;
+import com.ipartek.formacion.ejemplocompleto.servicios.PonenteService;
 
 @Controller
-public class IndexController {
+public class PonenteController {
+	@Autowired
+	private PonenteService ponenteService;
+	
 	@GetMapping("/")
 	public String index() {
 		return "index";
@@ -17,11 +20,7 @@ public class IndexController {
 	
 	@GetMapping("/listado")
 	public String listado(Model modelo) {
-		ArrayList<Ponente> ponentes = new ArrayList<>();
-		
-		ponentes.add(new Ponente(1L, "Javier Lete", "Va a decir cosas mu chulas de muchas tecnologías..."));
-		ponentes.add(new Ponente(2L, "Pepe Pérez", "Hablará sobre los nombres comunes utilizados en programación"));
-		ponentes.add(new Ponente(3L, "Paco Pérez", "Hablará de los porteadores"));
+		Iterable<Ponente> ponentes = ponenteService.getPonentes();
 		
 		modelo.addAttribute("ponentes", ponentes);
 		
