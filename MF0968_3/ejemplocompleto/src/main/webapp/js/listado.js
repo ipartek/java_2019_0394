@@ -9,7 +9,9 @@ $(function() {
 			//var ponente = { id: 1, nombre: 'Javier', experiencia: 'Es profe' };
 
 			var ponente;
-			var html;
+			var html = '';
+			
+			$('.card-group').empty();
 			
 			$(ponentes).each(function() {
 				ponente = this;
@@ -24,10 +26,10 @@ $(function() {
 						<p class="card-text">${ponente.experiencia}</p>
 					</div>
 				</div>`;
-				
-				console.log(html);
+			
+				$('.card-group').append(html)
 			});
-
+			
 		});
 	});
 });
