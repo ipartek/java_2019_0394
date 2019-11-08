@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>JSP</h1>
-<c:out value="${prueba}"></c:out>
-${prueba}
-</body>
-</html>
+	pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/vistas/includes/header.jsp"%>
+<div class="container">
+
+	<div class="jumbotron">
+		<h1>Ponentes de la conferencia</h1>
+		<p>Aplicación de ejemplo con todas las tecnologías que hemos visto
+			a lo largo del curso</p>
+	</div>
+</div>
+<%@ include file="/WEB-INF/vistas/includes/footer.jsp"%>
