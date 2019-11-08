@@ -14,7 +14,8 @@ public class PonenteController {
 	private PonenteService ponenteService;
 	
 	@GetMapping("/")
-	public String index() {
+	public String index(Model modelo) {
+		modelo.addAttribute("prueba", "Dato de prueba");
 		return "index";
 	}
 	
