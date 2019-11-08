@@ -17,4 +17,7 @@
 		</c:forEach>
 	</div>
 </div>
+
+<script src="js/listado.js"></script>
+
 <%@ include file="/WEB-INF/vistas/includes/footer.jsp"%>

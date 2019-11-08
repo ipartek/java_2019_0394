@@ -18,6 +18,6 @@ import lombok.NoArgsConstructor;
 public class Ponente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id; //Id; // Al poner el Id con I mayúscula, se ve en el Spring Data Rest API
 	private String nombre, experiencia;
 }
