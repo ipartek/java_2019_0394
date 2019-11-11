@@ -6,4 +6,6 @@ public interface PonenteService {
 
 	Iterable<Ponente> getPonentes();
 
+	Ponente addPonente(Ponente ponente);
+
 }

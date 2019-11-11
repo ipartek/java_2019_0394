@@ -15,4 +15,9 @@ public class PonenteServiceImpl implements PonenteService {
 	public Iterable<Ponente> getPonentes() {
 		return ponenteDao.getPonentes();
 	}
+	
+	@Override
+	public Ponente addPonente(Ponente ponente) {
+		return ponenteDao.insertPonente(ponente);
+	}
 }

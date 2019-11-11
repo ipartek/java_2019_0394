@@ -28,4 +28,9 @@ public class PonenteDaoImpl implements PonenteDao {
 				
 		return ponenteRepository.findAll();
 	}
+
+	@Override
+	public Ponente insertPonente(Ponente ponente) {
+		return ponenteRepository.save(ponente);
+	}
 }

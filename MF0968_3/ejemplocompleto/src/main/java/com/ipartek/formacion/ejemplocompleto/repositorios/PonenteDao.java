@@ -6,4 +6,6 @@ public interface PonenteDao {
 
 	Iterable<Ponente> getPonentes();
 
+	Ponente insertPonente(Ponente ponente);
+
 }
