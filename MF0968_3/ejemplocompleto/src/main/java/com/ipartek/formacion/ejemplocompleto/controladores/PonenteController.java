@@ -5,8 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ipartek.formacion.ejemplocompleto.entidades.Ponente;
+import com.ipartek.formacion.ejemplocompleto.modelo.Alerta;
 import com.ipartek.formacion.ejemplocompleto.servicios.PonenteService;
 
 @Controller
@@ -34,8 +36,16 @@ public class PonenteController {
 	}
 	
 	@PostMapping("/formulario")
-	public String formulario(Ponente ponente) {
+	public String formulario(Ponente ponente, RedirectAttributes attrs) {
 		ponenteService.addPonente(ponente);
+		
+		Alerta alerta = new Alerta();
+		
+		alerta.setTexto("Insertado correctamente");
+		alerta.setNivel("success");
+		
+		attrs.addFlashAttribute(alerta);
+		
 		return "redirect:/listado";
 	}
 }
