@@ -27,4 +27,6 @@
 		</div>
 	</form>
 </div>
+
+<script src="js/formulario.js"></script>
 <%@ include file="/WEB-INF/vistas/includes/footer.jsp"%>
