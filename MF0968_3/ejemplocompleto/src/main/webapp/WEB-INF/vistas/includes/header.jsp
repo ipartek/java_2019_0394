@@ -30,12 +30,12 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="listado">Listado
-							de ponentes <span class="sr-only">(current)</span>
-					</a></li>
-					<li class="nav-item active"><a id="refrescarlistado" class="nav-link" href="#">REFRESCAR Listado
-							de ponentes <span class="sr-only">(current)</span>
-					</a></li>
+					<li class="nav-item"><a class="nav-link" href="listado">Listado
+							de ponentes </a></li>
+					<li class="nav-item"><a id="refrescarlistado" class="nav-link"
+						href="#">REFRESCAR Listado de ponentes </a></li>
+					<li class="nav-item"><a id="refrescarlistado" class="nav-link"
+						href="formulario">Formulario</a></li>
 				</ul>
 			</div>
 		</nav>

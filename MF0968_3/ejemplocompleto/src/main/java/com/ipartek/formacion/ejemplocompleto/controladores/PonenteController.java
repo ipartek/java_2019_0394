@@ -26,4 +26,9 @@ public class PonenteController {
 		
 		return "listado";
 	}
+	
+	@GetMapping("/formulario")
+	public String formulario() {
+		return "formulario";
+	}
 }
