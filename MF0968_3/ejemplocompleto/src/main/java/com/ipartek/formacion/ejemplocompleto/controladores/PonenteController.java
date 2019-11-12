@@ -35,19 +35,24 @@ public class PonenteController {
 	}
 	
 	@GetMapping("/formulario")
-	public String formulario() {
+	public String formulario(@ModelAttribute Ponente ponente) {
 		return "formulario";
 	}
 	
 	@PostMapping("/formulario")
-	public String formulario(@Valid Ponente ponente, BindingResult bindingResult, RedirectAttributes attrs) {
+	public String formulario(@Valid Ponente ponente, BindingResult bindingResult, Model modelo, RedirectAttributes attrs) {
+		Alerta alerta = new Alerta();
+		
 		if(bindingResult.hasErrors()) {
+			alerta.setTexto("Error al validar");
+			alerta.setNivel("warning");
+			
+			modelo.addAttribute("alerta", alerta);
+			
 			return "formulario";
 		}
 		
 		ponenteService.addPonente(ponente);
-		
-		Alerta alerta = new Alerta();
 		
 		alerta.setTexto("Insertado correctamente");
 		alerta.setNivel("success");
