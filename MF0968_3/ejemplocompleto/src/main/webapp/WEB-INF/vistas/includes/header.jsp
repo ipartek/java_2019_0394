@@ -38,6 +38,9 @@
 						href="formulario">Formulario</a></li>
 				</ul>
 			</div>
+			<form method="post" action="logout" class="form-inline my-2 my-lg-0">
+				<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+			</form>
 		</nav>
 		<c:if test="${alerta != null}">
 			<div class="alert alert-${alerta.nivel} alert-dismissible fade show"
