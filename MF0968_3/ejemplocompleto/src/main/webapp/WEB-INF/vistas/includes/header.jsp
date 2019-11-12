@@ -39,6 +39,8 @@
 				</ul>
 			</div>
 			<form method="post" action="logout" class="form-inline my-2 my-lg-0">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
 				<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
 			</form>
 		</nav>

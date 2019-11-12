@@ -10,6 +10,8 @@
 		<div>You have been logged out.</div>
 	</c:if>
 	<form method="post">
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
 		<div class="form-group row">
 			<label for="usuario" class="col-sm-2 col-form-label">Usuario</label>
 			<div class="col-sm-10">
