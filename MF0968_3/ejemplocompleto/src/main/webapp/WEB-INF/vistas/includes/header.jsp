@@ -38,11 +38,20 @@
 						href="formulario">Formulario</a></li>
 				</ul>
 			</div>
-			<form method="post" action="logout" class="form-inline my-2 my-lg-0">
-				<input type="hidden" name="${_csrf.parameterName}"
-					value="${_csrf.token}" />
-				<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
-			</form>
+			<c:if test="${pageContext.request.remoteUser != null}">
+				<form method="post" action="logout" class="form-inline my-2 my-lg-0">
+					<input type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
+					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+						Logout ${pageContext.request.remoteUser}
+					</button>
+				</form>
+			</c:if>
+			<c:if test="${pageContext.request.remoteUser == null}">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+				</ul>
+			</c:if>
 		</nav>
 		<c:if test="${alerta != null}">
 			<div class="alert alert-${alerta.nivel} alert-dismissible fade show"
