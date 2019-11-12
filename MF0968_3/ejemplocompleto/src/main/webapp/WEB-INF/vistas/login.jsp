@@ -3,12 +3,6 @@
 <%@ include file="/WEB-INF/vistas/includes/header.jsp"%>
 
 <div class="container">
-	<c:if test="${param.error}">
-		<div>Invalid username and password.</div>
-	</c:if>
-	<c:if test="${param.logout}">
-		<div>You have been logged out.</div>
-	</c:if>
 	<form method="post">
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
