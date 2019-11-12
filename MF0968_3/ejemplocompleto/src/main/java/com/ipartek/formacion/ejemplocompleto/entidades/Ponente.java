@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,5 +21,10 @@ public class Ponente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; //Id; // Al poner el Id con I mayúscula, se ve en el Spring Data Rest API
-	private String nombre, experiencia;
+	
+	@NotNull
+	@Size(min=2, max=30)
+	private String nombre;
+	@Size(max=255)
+	private String experiencia;
 }

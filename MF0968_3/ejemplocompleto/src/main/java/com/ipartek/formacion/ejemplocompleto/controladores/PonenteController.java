@@ -1,9 +1,13 @@
 package com.ipartek.formacion.ejemplocompleto.controladores;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -36,7 +40,11 @@ public class PonenteController {
 	}
 	
 	@PostMapping("/formulario")
-	public String formulario(Ponente ponente, RedirectAttributes attrs) {
+	public String formulario(@Valid Ponente ponente, BindingResult bindingResult, RedirectAttributes attrs) {
+		if(bindingResult.hasErrors()) {
+			return "formulario";
+		}
+		
 		ponenteService.addPonente(ponente);
 		
 		Alerta alerta = new Alerta();
