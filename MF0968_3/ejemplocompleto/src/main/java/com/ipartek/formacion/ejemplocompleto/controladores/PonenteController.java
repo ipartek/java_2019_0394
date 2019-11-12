@@ -67,4 +67,9 @@ public class PonenteController {
 	public String login() {
 		return "login";
 	}
+	
+	@GetMapping("/403")
+	public String sinPermisos() {
+		return "redirect:/login";
+	}
 }
